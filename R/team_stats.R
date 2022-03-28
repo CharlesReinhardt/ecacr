@@ -4,17 +4,35 @@
 #' @export
 #'
 #' @examples
-#' team_stats()[1] gives women's team data
-#' team_stats()[2] gives men's team data
-team_stats <- function() {
-  url_women <- "https://www.ecachockey.com/women/2021-22/teams?sort=name&r=0&pos="
-  tab_women <- read_html(url_women) %>% html_table()
-  data_women <- tab[[1]]
+#' team_stats() gives women's team data by default
+#' team_stats(gender="women") gives women's team data
+#' team_stats(gender="men") gives men's team data
+team_stats <- function(gender="women") {
+  # TODO deal with errors
+  # TODO implement testthat tests for this function (test col dimensions and col names)
+  url <- paste0("https://www.ecachockey.com/", gender, "/2021-22/teams?sort=name&r=0&pos=")
+  tab <- read_html(url) %>% html_table()
+  data <- tab[[1]]
 
-  url_men <- "https://www.ecachockey.com/men/2021-22/teams?sort=name&r=0&pos="
-  tab_men <- read_html(url_men) %>% html_table()
-  data_men <- tab[[1]]
+  data_renamed <- data %>%
+    rename(GamesPlayed = gp,
+           Goals = g,
+           Assists = a,
+           GoalsPerGame = gpg,
+           Shots = s,
+           PenaltyMinutes = pim,
+           PowerPlayGoals = ppg,
+           PowerPlayOpportunities = ppo,
+           PowerPlayPercent = `pp%`,
+           PowerPlayGoalsAgainst = ppga,
+           TimesShortHanded = tsh,
+           PenaltyKillPercent = `pk%`,
+           ShortHandedGoals = shg,
+           GoalsAgainst = ga,
+           GoalsAgainstAverage = gaa,
+           Saves = sv,
+           SavePercent = `sv%`,
+           EmptyNetGoalsAgainst = en)
 
-  data_list <- list(data_women, data_men)
-  return(data_list)
+  return(data_renamed)
 }
