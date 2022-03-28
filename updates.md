@@ -10,4 +10,6 @@ Got a simple hello world function working and set up a lot of documentation and 
 
 Got team_stats scraping function working, working on exporting that properly so I can start playing around with the stats in a separate rmarkdown. Looking to start get some good visualizations to know what I want users of the package to be able to make.
 
+## March 28
 
+I got swamped with other work and life stuff so I was not able to work on my project over the last 5 days. Plan for today is to start playing around with some visualizations and hopefully creating a lollipop plot function or something. 

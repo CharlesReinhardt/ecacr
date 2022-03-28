@@ -4,7 +4,8 @@
 #' @export
 #'
 #' @examples
-#' team_stats()
+#' team_stats()[1] gives women's team data
+#' team_stats()[2] gives men's team data
 team_stats <- function() {
   url_women <- "https://www.ecachockey.com/women/2021-22/teams?sort=name&r=0&pos="
   tab_women <- read_html(url_women) %>% html_table()
