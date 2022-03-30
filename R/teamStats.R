@@ -1,15 +1,19 @@
 #' Scrape Team Statistics
 #'
-#' @return returns a list of women's and men's ecac team data
+#' @return returns a either women's or men's team statistics data. Returns women's data by default.
 #' @export
 #'
 #' @examples
-#' team_stats() gives women's team data by default
-#' team_stats(gender="women") gives women's team data
-#' team_stats(gender="men") gives men's team data
-team_stats <- function(gender="women") {
-  # TODO deal with errors
-  # TODO implement testthat tests for this function (test col dimensions and col names)
+#' teamStats() gives women's team data by default
+#' teamStats(gender="women") gives women's team data
+#' teamStats(gender="men") gives men's team data
+teamStats <- function(gender="women") {
+
+  # throw an error
+  if (gender != "women" & gender != "men") {
+    stop("gender argument must either be 'women' or 'men'")
+  }
+
   url <- paste0("https://www.ecachockey.com/", gender, "/2021-22/teams?sort=name&r=0&pos=")
   tab <- read_html(url) %>% html_table()
   data <- tab[[1]]
@@ -28,6 +32,7 @@ team_stats <- function(gender="women") {
            TimesShortHanded = tsh,
            PenaltyKillPercent = `pk%`,
            ShortHandedGoals = shg,
+           ShortHandedGoalsAgainst = shga,
            GoalsAgainst = ga,
            GoalsAgainstAverage = gaa,
            Saves = sv,

@@ -17,3 +17,7 @@ I got swamped with other work and life stuff so I was not able to work on my pro
 ## March 28 End of Class
 
 Got team_stats() fully functional (minus error checking and testing). Got a mostly working lollipop chart going in a separate playground document, moving forward plan is to get it implemented into the package and add a bit more customization. 
+
+## March 30 Beginning of class
+
+Error checked and tested for teamStats(). base lollipopChart function is working in package. declared dependencies in DESCRIPTION. Casually chatted with Dr.RLock about learnr.
