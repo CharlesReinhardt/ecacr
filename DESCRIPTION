@@ -3,7 +3,7 @@ Title: Scrapes ECAC Hockey Team Data
 Version: 0.0.0.9000
 Authors@R: 
     person("Charles", "Reinhardt", , "charlespreinhardt@gmail.com", role = c("aut", "cre"))
-Description: Scrapes ECAC Hockey team data and allows user to explore via some data visualizations. Intended for R users with little data visualization expertise.
+Description: Scrapes ECAC Hockey team data and allows user to explore via some data visualizations. Intended for R users with little data visualization experience.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -13,4 +13,5 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     ggplot2,
-    rvest
+    rvest,
+    dplyr

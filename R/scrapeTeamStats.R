@@ -4,10 +4,10 @@
 #' @export
 #'
 #' @examples
-#' teamStats() gives women's team data by default
-#' teamStats(gender="women") gives women's team data
-#' teamStats(gender="men") gives men's team data
-teamStats <- function(gender="women") {
+#' scrapeTeamStats() gives women's team data by default
+#' scrapeTeamStats(gender="women") gives women's team data
+#' scrapeTeamStats(gender="men") gives men's team data
+scrapeTeamStats <- function(gender="women") {
 
   # throw an error
   if (gender != "women" & gender != "men") {

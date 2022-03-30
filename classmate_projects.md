@@ -1,6 +1,6 @@
 ## March 21
 
-Shane: Shiny app on Premier League Football players, creating player profiles for players.
+Shane Hauck: Shiny app on Premier League Football players, creating player profiles for players.
 
 ## March 23
 
@@ -10,4 +10,7 @@ Kaden Pickering: Shiny app on NHL games. Focus on Pittsburgh, then go from there
 
 Grace Wysocki: leaflet graph on water pollution in CA. Should be cool
 
+## March 30
+
+Shane Hauck: Shiny app on Premier League Football players, graph is coming along really well
 
