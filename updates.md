@@ -22,6 +22,8 @@ Got team_stats() fully functional (minus error checking and testing). Got a most
 
 Error checked and tested for teamStats(). base lollipopChart function is working in package. declared dependencies in DESCRIPTION. Casually chatted with Dr.RLock about learnr.
 
+`learnr` is so cool! I've thought about making some `learnr` tutorials to use as an introduction in STAT/DATA 234....but have not had the time :)
+
 ## March 30 End of Class
 
 Developed scatterplot function, some helper functions (check variable names, titleCase)
