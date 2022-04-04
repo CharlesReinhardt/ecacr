@@ -12,3 +12,8 @@ returns a either women's or men's team statistics data. Returns women's data by 
 \description{
 Scrape Team Statistics
 }
+\examples{
+scrapeTeamStats()
+scrapeTeamStats(gender="women")
+scrapeTeamStats(gender="men")
+}

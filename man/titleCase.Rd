@@ -16,6 +16,6 @@ the given string in title case
 Title Case a String (single word)
 }
 \examples{
-titleCase("foo") gives "Foo"
-titleCase("sTRinG") gives "String"
+titleCase("foo")
+titleCase("sTRinG")
 }

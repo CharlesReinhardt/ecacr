@@ -25,7 +25,10 @@ Error checked and tested for teamStats(). base lollipopChart function is working
 ## March 30 End of Class
 
 Developed scatterplot function, some helper functions (check variable names, titleCase)
+
+## April 4 Beginning of class
+
+Implemented basic tests for lollipopChart and scatterplot functions (based solely on dimensions). I think I also attached dependencies correctly!! Not positive though. 
 TODO scrape individual lineup statistics
-TODO test plot functions by checking object dimensions
-TODO attach dependencies correctly
+
 

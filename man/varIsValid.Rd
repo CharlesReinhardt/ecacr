@@ -16,6 +16,6 @@ TRUE if variableName is valid, FALSE otherwise
 Check Variable Name Validity
 }
 \examples{
-varIsValid("Goals") returns TRUE,
-varIsValid("notValid") returns FALSE
+varIsValid("Goals")
+varIsValid("notValid")
 }

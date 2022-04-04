@@ -7,10 +7,11 @@
 #'
 #' @return a scatter plot of the two given variables
 #' @export
+#' @import ggplot2
 #'
 #' @examples
-#' scatterPlot("Goals", "Assists", TRUE) gives a scatter plot of women's goals vs. assists with an added trend line
-#' scatterPlot("Goals", Assists", FALSE, "men") gives a scatter plot of men's goals vs. assists with no added trend line
+#' scatterPlot("Goals", "Assists", TRUE)
+#' scatterPlot("Goals", "Assists", FALSE, "men")
 scatterPlot <- function(x, y, trend, gender="women") {
 
   # check for invalid variable names
@@ -21,8 +22,6 @@ scatterPlot <- function(x, y, trend, gender="women") {
   if (!varIsValid(y)) {
     stop(paste0(y, " not a valid variable name"))
   }
-
-  # TODO how to test this function?
 
   data <- scrapeTeamStats(gender)
   title <- paste0(x, " vs. ", y, " in ", titleCase(gender) , "'s ECAC")

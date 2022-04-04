@@ -22,6 +22,6 @@ a scatter plot of the two given variables
 Scatter Plot of Two Variables
 }
 \examples{
-scatterPlot("Goals", "Assists", TRUE) gives a scatter plot of women's goals vs. assists with an added trend line
-scatterPlot("Goals", Assists", FALSE, "men") gives a scatter plot of men's goals vs. assists with no added trend line
+scatterPlot("Goals", "Assists", TRUE)
+scatterPlot("Goals", "Assists", FALSE, "men")
 }

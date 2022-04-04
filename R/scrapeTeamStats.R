@@ -4,9 +4,9 @@
 #' @export
 #'
 #' @examples
-#' scrapeTeamStats() gives women's team data by default
-#' scrapeTeamStats(gender="women") gives women's team data
-#' scrapeTeamStats(gender="men") gives men's team data
+#' scrapeTeamStats()
+#' scrapeTeamStats(gender="women")
+#' scrapeTeamStats(gender="men")
 scrapeTeamStats <- function(gender="women") {
 
   # throw an error
@@ -15,11 +15,11 @@ scrapeTeamStats <- function(gender="women") {
   }
 
   url <- paste0("https://www.ecachockey.com/", gender, "/2021-22/teams?sort=name&r=0&pos=")
-  tab <- read_html(url) %>% html_table()
+  tab <- rvest::read_html(url) %>% rvest::html_table()
   data <- tab[[1]]
 
   data_renamed <- data %>%
-    rename(GamesPlayed = gp,
+    dplyr::rename(GamesPlayed = gp,
            Goals = g,
            Assists = a,
            GoalsPerGame = gpg,

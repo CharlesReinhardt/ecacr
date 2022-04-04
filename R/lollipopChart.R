@@ -5,11 +5,12 @@
 #'
 #' @return returns a lollipop chart of the given variable, separated by team. Plots Games Played by default.
 #' @export
+#' @import ggplot2
 #'
 #' @examples
-#' lollipopChart() returns a plot of women's teams games played
-#' lollipopChart("Goals") returns a plot of given women's teams goals scored
-#' lollipopChart("Goals", "men") returns a plot of men's team's goals scored
+#' lollipopChart()
+#' lollipopChart("Goals")
+#' lollipopChart("Goals", "men")
 lollipopChart <- function(var, gender="women") {
 
   # check for invalid variable names
@@ -17,12 +18,10 @@ lollipopChart <- function(var, gender="women") {
     stop(paste0(var, " not a valid variable name"))
   }
 
-  # TODO how to test this function?
-
   data <- scrapeTeamStats(gender)
   data_ordered <-
     data %>%
-    mutate(Name = fct_reorder(factor(Name), .data[[var]]))
+    dplyr::mutate(Name = forcats::fct_reorder(factor(Name), .data[[var]]))
 
   genderTitle <- titleCase(gender)
 

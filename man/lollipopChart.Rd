@@ -18,7 +18,7 @@ returns a lollipop chart of the given variable, separated by team. Plots Games P
 Make a Lollipop Chart
 }
 \examples{
-lollipopChart() returns a plot of women's teams games played
-lollipopChart("Goals") returns a plot of given women's teams goals scored
-lollipopChart("Goals", "men") returns a plot of men's team's goals scored
+lollipopChart()
+lollipopChart("Goals")
+lollipopChart("Goals", "men")
 }
