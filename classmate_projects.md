@@ -14,3 +14,8 @@ Grace Wysocki: leaflet graph on water pollution in CA. Should be cool
 
 Shane Hauck: Shiny app on Premier League Football players, graph is coming along really well
 
+## April 4
+
+Kyle Frimel: shiny app on Philidelphia eagles, tons of offense and defense data
+Jack: shiny app on baseball data
+

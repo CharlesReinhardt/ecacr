@@ -31,6 +31,10 @@ Developed scatterplot function, some helper functions (check variable names, tit
 ## April 4 Beginning of class
 
 Implemented basic tests for lollipopChart and scatterplot functions (based solely on dimensions). I think I also attached dependencies correctly!! Not positive though. 
-TODO scrape individual lineup statistics
 
+## April 4 End of class
 
+Merged a comment that dr. higham made to my project. Was really scary. Played around with scraping individual and game data, next step is turning it into a function.
+
+# TODO make function for individual lineups
+# TODO merge attendance and game stats (and turn into function)
