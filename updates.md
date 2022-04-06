@@ -36,5 +36,11 @@ Implemented basic tests for lollipopChart and scatterplot functions (based solel
 
 Merged a comment that dr. higham made to my project. Was really scary. Played around with scraping individual and game data, next step is turning it into a function.
 
-# TODO make function for individual lineups
+## April 6 before class
+
+Made individual scraping function. Planning on adding "all" team functionality and then formally testing thefunction.
+
+
+# TODO add "all" functionality to indiv lineups function
+# TODO formally test indiv lineups function
 # TODO merge attendance and game stats (and turn into function)
