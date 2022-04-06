@@ -38,9 +38,12 @@ Merged a comment that dr. higham made to my project. Was really scary. Played ar
 
 ## April 6 before class
 
-Made individual scraping function. Planning on adding "all" team functionality and then formally testing thefunction.
+Made individual scraping function. Planning on adding "all" team functionality and then formally testing the function.
 
+## April 6 End of Class
 
-# TODO add "all" functionality to indiv lineups function
+Made a function to scrape all teams individual player statistics. Working on error checking the arguments to that function, and how I want to deal with optional or missing function arguments. Found a few good online resources that I will consult over the weekend.
+
+# TODO address optional/missing function arguments
 # TODO formally test indiv lineups function
 # TODO merge attendance and game stats (and turn into function)
