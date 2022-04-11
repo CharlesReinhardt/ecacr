@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-scrapeIndivStatsByTeam <- function(team, conf, skaters, gender="women") {
+scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="women") {
 
   # TODO how to test this
 

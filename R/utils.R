@@ -12,16 +12,28 @@ titleCase <- function(string) {
   titleString
 }
 
-#' Check Variable Name Validity
+#' Check Team Variable Name Validity
 #'
 #' @param variableName name of Variable to check
+#' @param team TRUE if checking team variable name, FALSE otherwise
+#' @param skaters TRUE if checking skater variable name, FALSE if checking goalie variable names, NULL otherwise
 #'
 #' @return TRUE if variableName is valid, FALSE otherwise
 #'
 #' @examples
-#' varIsValid("Goals")
-#' varIsValid("notValid")
-varIsValid <- function(variableName) {
+varIsValid <- function(variableName, team, skaters=NULL) {
+  if (team) {
+    # checking team variables
+    vars <- names(scrapeTeamStats())
+  } else {
+    if (skaters) {
+      # checking skater variable names
+      vars <- names(scrapeIndivStatsByTeam(team="brown", skaters=TRUE))
+    } else {
+      # checking goalie variable names
+      vars <- names(scrapeIndivStatsByTeam(team="brown", skaters=FALSE))
+    }
+  }
   vars <- names(scrapeTeamStats())
   variableName %in% vars
 }

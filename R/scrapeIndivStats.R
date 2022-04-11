@@ -8,12 +8,17 @@
 #' @export
 #'
 #' @examples
-scrapeIndivStats <- function(conf, skaters, gender="women") {
+scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women") {
 
-  # TODO deal with missing or incorrect params
-  # http://adv-r.had.co.nz/Functions.html#function-arguments
-  # https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions
+  # check valid conf argument
+  if (typeof(conf) != "logical") {
+    stop("conf argument must either be TRUE or FALSE")
+  }
 
+  # check valid skaters argument
+  if (typeof(skaters) != "logical") {
+    stop("skaters argument must either be TRUE or FALSE")
+  }
 
   teamNames <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
                  "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")

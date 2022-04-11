@@ -44,6 +44,19 @@ Made individual scraping function. Planning on adding "all" team functionality a
 
 Made a function to scrape all teams individual player statistics. Working on error checking the arguments to that function, and how I want to deal with optional or missing function arguments. Found a few good online resources that I will consult over the weekend.
 
-# TODO address optional/missing function arguments
-# TODO formally test indiv lineups function
+
+
+## April 11 Beginning of class
+
+Decided how to deal with missing arguments. Formally tested indiv stats scraper. Created a histogram function for individual statistics. Played around with boxplots and alternatives for individual statistics
+
+# TODO make some individual stats graphs
+# TODO refine boxplot (choose one)
+# TODO test histogram function
+# TODO implement tests for private helper functions
 # TODO merge attendance and game stats (and turn into function)
+
+# TODO load individual and team stats on package load into a global/package scope kind of deal.
+  # like, do the slow data scraping loading when the package loads, so that we can access the data
+  # fast when we make additional graphs
+  # http://adv-r.had.co.nz/Environments.html info on environments

@@ -12,14 +12,14 @@
 #' @examples
 #' scatterPlot("Goals", "Assists", TRUE)
 #' scatterPlot("Goals", "Assists", FALSE, "men")
-scatterPlot <- function(x, y, trend, gender="women") {
+scatterPlot <- function(x, y, trend=FALSE, gender="women") {
 
   # check for invalid variable names
-  if (!varIsValid(x)) {
+  if (!varIsValid(x, team=TRUE)) {
     stop(paste0(x, " not a valid variable name"))
   }
 
-  if (!varIsValid(y)) {
+  if (!varIsValid(y, team=TRUE)) {
     stop(paste0(y, " not a valid variable name"))
   }
 
