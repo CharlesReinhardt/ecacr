@@ -50,11 +50,18 @@ Made a function to scrape all teams individual player statistics. Working on err
 
 Decided how to deal with missing arguments. Formally tested indiv stats scraper. Created a histogram function for individual statistics. Played around with boxplots and alternatives for individual statistics
 
+## April 13 beginning of class
+
+REALLY hammered away on how to properly join and scrape attendance and game data. Made it into a function. Decided to do boxplot (instead of alternatives, at brendo's suggestion). 
+
+## April 13 end of class
+
+Tested my scraping game stats formally and fixed some broken old functions. 
+
 # TODO make some individual stats graphs
-# TODO refine boxplot (choose one)
 # TODO test histogram function
 # TODO implement tests for private helper functions
-# TODO merge attendance and game stats (and turn into function)
+# TODO scrape all game stats
 
 # TODO load individual and team stats on package load into a global/package scope kind of deal.
   # like, do the slow data scraping loading when the package loads, so that we can access the data

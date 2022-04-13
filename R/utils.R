@@ -15,7 +15,7 @@ titleCase <- function(string) {
 #' Check Team Variable Name Validity
 #'
 #' @param variableName name of Variable to check
-#' @param team TRUE if checking team variable name, FALSE otherwise
+#' @param team TRUE if checking team variable names, FALSE otherwise
 #' @param skaters TRUE if checking skater variable name, FALSE if checking goalie variable names, NULL otherwise
 #'
 #' @return TRUE if variableName is valid, FALSE otherwise
