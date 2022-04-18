@@ -1,8 +1,8 @@
 #' Produce a chart visualizing the wins and losses of a team
 #'
-#' @param team
-#' @param byLocation
-#' @param gender
+#' @param team the team you'd like to investigate
+#' @param byLocation TRUE to split Home/Away, FALSE otherwise (default TRUE)
+#' @param gender gender you'd like to investigate (default "women")
 #'
 #' @return
 #' @export
@@ -11,16 +11,15 @@
 #'
 #' @examples
 winLossChart <- function(team, byLocation=TRUE, gender="women") {
-  validTeams <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard", "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")
 
   # check valid team name
-  if (!(team %in% validTeams)) {
+  if (!teamIsValid(team)) {
     message <- paste0(team, " not a valid team name")
     stop(message)
   }
 
   # check valid gender
-  if (gender != "women" & gender != "men") {
+  if (!genderIsValid(gender)) {
     stop("gender argument must either be 'women' or 'men'")
   }
 

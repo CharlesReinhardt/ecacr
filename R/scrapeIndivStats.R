@@ -23,11 +23,10 @@ scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women", verbose=
 
   teamNames <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
                  "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")
-  dataFrames <- c()
 
   data <- data.frame()
 
-  # fill dataFrames with each team's data
+  # fill data with each team's data
   for (i in 1:length(teamNames)) {
     team <- teamNames[i]
     if (verbose) {

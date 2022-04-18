@@ -14,9 +14,7 @@ scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="wome
   # TODO how to test this
 
   # check valid team
-  validTeams <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
-                 "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")
-  if (!(team %in% validTeams)) {
+  if (!teamIsValid(team)) {
     stop("not a valid team name")
   }
 
@@ -31,7 +29,7 @@ scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="wome
   }
 
   # check valid gender
-  if (gender != "women" & gender != "men") {
+  if (!genderIsValid(gender)) {
     stop("gender argument must either be 'women' or 'men'")
   }
 

@@ -1,10 +1,16 @@
 test_that("scrapeTeamStats dimensions are expected", {
   expect_equal(
-    dim(scrapeTeamStats(gender="women"))[2], 21
+    dim(scrapeTeamStats(conf=TRUE, gender="women"))[2], 21
     )
   expect_equal(
-    dim(scrapeTeamStats(gender="men"))[2], 21
+    dim(scrapeTeamStats(conf=TRUE,gender="men"))[2], 21
     )
+  expect_equal(
+    dim(scrapeTeamStats(conf=FALSE, gender="women"))[2], 21
+  )
+  expect_equal(
+    dim(scrapeTeamStats(conf=FALSE,gender="men"))[2], 21
+  )
 })
 
 test_that("scrapeTeamStats col names are expected", {
@@ -19,6 +25,7 @@ test_that("scrapeTeamStats col names are expected", {
 })
 
 test_that("scrapeTeamStats is throwing an error on bad arguments", {
-  expect_error(scrapeTeamStats("male"), "gender argument")
+  expect_error(scrapeTeamStats(gender="male"), "gender argument")
   expect_error(scrapeTeamStats(gender="foo"))
+  expect_error(scrapeTeamStats(conf="FOO"))
 })

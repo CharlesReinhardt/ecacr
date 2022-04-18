@@ -1,6 +1,6 @@
 test_that("women's goals lollipopChart dimensions are expected", {
-  plot <- lollipopChart("Goals")
-  lens <- c(21, 2, 2, 2, 0, 4, 2, 6, 5)
+  plot <- lollipopChart(var="Goals")
+  lens <- c(21, 2, 2, 2, 0, 4, 2, 7, 5)
   n <- length(plot)
 
   for (i in 1:n) {
@@ -9,8 +9,8 @@ test_that("women's goals lollipopChart dimensions are expected", {
 })
 
 test_that("men's assists lollipopChart dimensions are expected", {
-  plot <- lollipopChart("Assists", gender="men")
-  lens <- c(21, 2, 2, 2, 0, 4, 2, 6, 5)
+  plot <- lollipopChart(var="Assists", gender="men")
+  lens <- c(21, 2, 2, 2, 0, 4, 2, 7, 5)
   n <- length(plot)
 
   for (i in 1:n) {

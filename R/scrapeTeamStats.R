@@ -7,18 +7,23 @@
 #' scrapeTeamStats()
 #' scrapeTeamStats(gender="women")
 #' scrapeTeamStats(gender="men")
-scrapeTeamStats <- function(gender="women") {
+scrapeTeamStats <- function(conf=FALSE, gender="women") {
 
   # throw an error
-  if (gender != "women" & gender != "men") {
+  if (!genderIsValid(gender)) {
     stop("gender argument must either be 'women' or 'men'")
   }
 
-  # TODO implement support for overall vs. conference team stats
-
   url <- paste0("https://www.ecachockey.com/", gender, "/2021-22/teams?sort=name&r=0&pos=")
   tab <- rvest::read_html(url) %>% rvest::html_table()
-  data <- tab[[1]]
+
+  index <- 1
+
+  if (conf) {
+    index <- index + 1
+  }
+
+  data <- tab[[index]]
 
   data_renamed <- data %>%
     dplyr::rename(GamesPlayed = gp,

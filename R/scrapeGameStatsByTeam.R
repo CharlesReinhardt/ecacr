@@ -11,18 +11,13 @@
 #' @examples
 scrapeGameStatsByTeam <- function(team, season="2021-22", gender="women") {
 
-  # TODO test this
-
   # check valid team
-  validTeams <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
-                  "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")
-  if (!(team %in% validTeams)) {
+  if (!teamIsValid(team)) {
     stop("not a valid team name")
   }
 
   # check gender
-  validGenders <- c("women", "men")
-  if(!(gender %in% validGenders)) {
+  if (!genderIsValid(gender)) {
     stop("not a valid gender argument")
   }
 

@@ -58,17 +58,21 @@ REALLY hammered away on how to properly join and scrape attendance and game data
 
 Tested my scraping game stats formally and fixed some broken old functions. 
 
-## April x beginning of class
+## April 18 beginning of class
 
 Fixed scraping game stats and worked on manipulating the date column into an actual date. Investigated some game stat graphs, and how to visualize wins/losses and game location (home/away). Made a function for win/losses.
 
-# TODO document win/loss function
-# TODO test win/loss function
+## April 18 end of class
+
+Documented win/loss function, cleaned up some old functions. Implemented conference and non-conference capabilities for team data, as well as for their associated visualizations. Wrote formal tests for winLossChart. 108 tests! Inflating test count well!!
+
 
 # TODO make boxplot function
 # TODO make some individual game stats graphs
+# TODO scrape all game stats
+
+# TODO start looking at final product: learnr, bookdown, some sort of package documentation other than source code
 
 # TODO test histogram function
-# TODO implement tests for private helper functions
-# TODO scrape all game stats
+
 

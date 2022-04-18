@@ -11,19 +11,19 @@
 #' lollipopChart()
 #' lollipopChart("Goals")
 #' lollipopChart("Goals", "men")
-lollipopChart <- function(var, gender="women") {
+lollipopChart <- function(var, conf=FALSE, gender="women") {
 
   # check for invalid variable names
   if (!varIsValid(var, team=TRUE)) {
     stop(paste0(var, " not a valid variable name"))
   }
 
-  data <- scrapeTeamStats(gender)
+  data <- scrapeTeamStats(conf=conf, gender=gender)
   data_ordered <-
     data %>%
     dplyr::mutate(Name = forcats::fct_reorder(factor(Name), .data[[var]]))
 
-  genderTitle <- titleCase(gender)
+  genderTitle <- stringr::str_to_title(gender)
 
   plot <-
     ggplot(data=data_ordered, mapping=aes(x = Name, y = .data[[var]])) +

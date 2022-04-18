@@ -1,18 +1,4 @@
-#' Title Case a String (single word)
-#'
-#' @param string a single word
-#'
-#' @return the given string in title case
-#'
-#' @examples
-#' titleCase("foo")
-#' titleCase("sTRinG")
-titleCase <- function(string) {
-  titleString <- paste0(toupper(substr(string, 1, 1)), tolower(substr(string, 2, nchar(string))))
-  titleString
-}
-
-#' Check Team Variable Name Validity
+#' Check Variable Name Validity
 #'
 #' @param variableName name of Variable to check
 #' @param team TRUE if checking team variable names, FALSE otherwise
@@ -36,4 +22,39 @@ varIsValid <- function(variableName, team, skaters=NULL) {
   }
   vars <- names(scrapeTeamStats())
   variableName %in% vars
+}
+
+#' Check that a team name is valid
+#'
+#' @param team team name to check
+#'
+#' @return TRUE if team is in ECAC and formatted correctly, FALSE otherwise
+#' @export
+#'
+#' @examples
+teamIsValid <- function(team) {
+
+  validTeams <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
+                  "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")
+
+  res <- team %in% validTeams
+
+  res
+}
+
+#' Checks gender is formatted correctly
+#'
+#' @param gender gender to check
+#'
+#' @return TRUE if gender is formatted correctly, FALSE otherwise
+#' @export
+#'
+#' @examples
+genderIsValid <- function(gender) {
+
+  validGenders <- c("women", "men")
+
+  res <- gender %in% validGenders
+
+  res
 }
