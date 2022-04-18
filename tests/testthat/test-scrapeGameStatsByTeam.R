@@ -39,3 +39,13 @@ test_that("scrapeGameStatsByTeam home/away appears to give both true/false", {
     expect_false(all(dataMen$Home))
   }
 })
+
+test_that("scrapeGameStatsByTeam left_join for attendance is successful", {
+  for (i in 1:length(validTeams)) {
+    team <- validTeams[i]
+    data <- scrapeGameStatsByTeam(team, gender="women")
+    dataMen <- scrapeGameStatsByTeam(team, gender="men")
+    expect_false(all(is.na(data$Attend)))
+    expect_false(all(is.na(dataMen$Attend)))
+  }
+})

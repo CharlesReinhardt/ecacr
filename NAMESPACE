@@ -2,5 +2,9 @@
 
 export(lollipopChart)
 export(scatterPlot)
+export(scrapeGameStatsByTeam)
+export(scrapeIndivStats)
+export(scrapeIndivStatsByTeam)
 export(scrapeTeamStats)
 import(ggplot2)
+import(stringr)

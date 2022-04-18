@@ -58,12 +58,17 @@ REALLY hammered away on how to properly join and scrape attendance and game data
 
 Tested my scraping game stats formally and fixed some broken old functions. 
 
-# TODO make some individual stats graphs
+## April x beginning of class
+
+Fixed scraping game stats and worked on manipulating the date column into an actual date. Investigated some game stat graphs, and how to visualize wins/losses and game location (home/away). Made a function for win/losses.
+
+# TODO document win/loss function
+# TODO test win/loss function
+
+# TODO make boxplot function
+# TODO make some individual game stats graphs
+
 # TODO test histogram function
 # TODO implement tests for private helper functions
 # TODO scrape all game stats
 
-# TODO load individual and team stats on package load into a global/package scope kind of deal.
-  # like, do the slow data scraping loading when the package loads, so that we can access the data
-  # fast when we make additional graphs
-  # http://adv-r.had.co.nz/Environments.html info on environments

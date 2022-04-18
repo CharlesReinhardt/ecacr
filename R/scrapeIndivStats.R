@@ -3,12 +3,13 @@
 #' @param conf TRUE for ecac data only, FALSE for conference and non-conference
 #' @param skaters TRUE for skater data, FALSE for goalie data
 #' @param gender "women" for women's data, "men" for men's data
+#' @param verbose TRUE for extra output during runtime, FALSE for no extra output
 #'
 #' @return data frame of individual player statistics for all ECAC teams
 #' @export
 #'
 #' @examples
-scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women") {
+scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women", verbose=TRUE) {
 
   # check valid conf argument
   if (typeof(conf) != "logical") {
@@ -28,8 +29,12 @@ scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women") {
 
   # fill dataFrames with each team's data
   for (i in 1:length(teamNames)) {
-    newTeamData <- scrapeIndivStatsByTeam(teamNames[i], conf=conf, skaters=skaters, gender=gender) %>%
-      dplyr::mutate(Team = teamNames[i])
+    team <- teamNames[i]
+    if (verbose) {
+      message(paste0("scraping data from ", str_to_title(team)))
+    }
+    newTeamData <- scrapeIndivStatsByTeam(team, conf=conf, skaters=skaters, gender=gender) %>%
+      dplyr::mutate(Team = team)
     data <- dplyr::bind_rows(data, newTeamData)
   }
 

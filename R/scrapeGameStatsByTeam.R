@@ -9,7 +9,7 @@
 #' @import stringr
 #'
 #' @examples
-scrapeGameStatsByTeam <- function(team, gender="women") {
+scrapeGameStatsByTeam <- function(team, season="2021-22", gender="women") {
 
   # TODO test this
 
@@ -26,32 +26,39 @@ scrapeGameStatsByTeam <- function(team, gender="women") {
     stop("not a valid gender argument")
   }
 
-  url <- paste0("https://www.ecachockey.com/", gender, "/2021-22/teams/", team)
+  url <- paste0("https://www.ecachockey.com/", gender, "/", season, "/teams/", team)
   tab <- rvest::read_html(url) %>% rvest::html_table()
 
+  year1 <- str_split(season, "-")[[1]][1]
+  year2 <- paste0("20", str_split(season, "-")[[1]][2])
+
   dataAttend <- tab[[14]] %>%
-    dplyr::mutate(Team = str_to_title(team),
-           Home = !str_detect(Opponent, "(at|vs.)\\r"),
-           Opponent = str_trim(str_replace(Opponent, "(at|vs.)\\r\n", "")),
-           Won = str_detect(Score, "W"),
-           Loss = str_detect(Score, "L"),
-           Tie = str_detect(Score, "T")) %>%
+    dplyr::mutate(
+            Date = paste0(Date, " ", dplyr::if_else( str_detect(Date, "Oct|Nov|Dec"), true=year1, false=year2 )),
+            Team = str_to_title(team),
+            Home = !str_detect(Opponent, "(at|vs.)\\r"),
+            Opponent = str_trim(str_replace(Opponent, "(at|vs.)\\r\n", "")),
+            Won = str_detect(Score, "W"),
+            Loss = str_detect(Score, "L"),
+            Tie = str_detect(Score, "T")) %>%
     dplyr::select(-Score)
 
-
   dataGame <- tab[[12]] %>%
-    dplyr::mutate(Team = team,
-           Home = !str_detect(Opponent, "(at|vs.) "),
-           Opponent = str_trim(str_replace(Opponent, "(at|vs.) ", "")),
-           Won = str_detect(Score, "W"),
-           Loss = str_detect(Score, "L"),
-           Tie = str_detect(Score, "T")) %>%
+    dplyr::mutate(
+            Date = paste0(Date, " ", dplyr::if_else( str_detect(Date, "Sep|Oct|Nov|Dec"), true=year1, false=year2 )),
+            Team = str_to_title(team),
+            Home = !str_detect(Opponent, "(at|vs.) "),
+            Opponent = str_trim(str_replace(Opponent, "(at|vs.) ", "")),
+            Won = str_detect(Score, "W"),
+            Loss = str_detect(Score, "L"),
+            Tie = str_detect(Score, "T")) %>%
     dplyr::select(-Score) %>%
     dplyr::relocate(Team, .after=Date) %>%
     dplyr::relocate(Home, Won, Loss, Tie, .after=Opponent)
 
   dataFull <- dplyr::left_join(dataGame, dataAttend, by = c("Date", "Team", "Opponent",
                                                      "Home", "Won", "Loss", "Tie")) %>%
+    dplyr::mutate(Date = lubridate::mdy(Date)) %>%
     dplyr::rename("Goals" = g,
            "Assists" = a,
            "Shots" = s,

@@ -1,4 +1,4 @@
 .onAttach <- function(libname, pkgname) {
-  print("Welcome to my package print")
-  e <- "string"
+  message("Welcome to ecacr, the R package for ECAC hockey data scraping
+          and introductory data visualizations.")
 }

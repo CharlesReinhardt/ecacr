@@ -4,7 +4,7 @@
 \alias{scatterPlot}
 \title{Scatter Plot of Two Variables}
 \usage{
-scatterPlot(x, y, trend, gender = "women")
+scatterPlot(x, y, trend = FALSE, gender = "women")
 }
 \arguments{
 \item{x}{variable on the x-axis of the scatterplot}

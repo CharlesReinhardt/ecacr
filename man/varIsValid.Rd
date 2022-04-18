@@ -2,20 +2,20 @@
 % Please edit documentation in R/utils.R
 \name{varIsValid}
 \alias{varIsValid}
-\title{Check Variable Name Validity}
+\title{Check Team Variable Name Validity}
 \usage{
-varIsValid(variableName)
+varIsValid(variableName, team, skaters = NULL)
 }
 \arguments{
 \item{variableName}{name of Variable to check}
+
+\item{team}{TRUE if checking team variable names, FALSE otherwise}
+
+\item{skaters}{TRUE if checking skater variable name, FALSE if checking goalie variable names, NULL otherwise}
 }
 \value{
 TRUE if variableName is valid, FALSE otherwise
 }
 \description{
-Check Variable Name Validity
-}
-\examples{
-varIsValid("Goals")
-varIsValid("notValid")
+Check Team Variable Name Validity
 }
