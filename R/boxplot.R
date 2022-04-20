@@ -8,6 +8,11 @@
 #'
 #' @examples
 boxplot <- function(var, gender="women") {
+
+  if (!varisValid(var, type="game")) {
+    stop(paste0(var, " not a valid variable"))
+  }
+
   data <- scrapeGameStats(gender=gender)
   title <- paste0(var, " (each game) by team in ", str_to_title(gender), "'s ECAC")
 

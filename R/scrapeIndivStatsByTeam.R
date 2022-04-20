@@ -46,6 +46,7 @@ scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="wome
     index <- index + 5
     data <- tab[[index]] %>% dplyr::filter(!is.na(No.))
     dataRenamed <- data %>%
+      dplyr::filter(Pos != "G") %>%
       dplyr::rename(Year = Yr,
                     Position = Pos,
                     GamesPlayed = gp,

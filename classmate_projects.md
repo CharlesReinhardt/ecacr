@@ -19,3 +19,15 @@ Shane Hauck: Shiny app on Premier League Football players, graph is coming along
 Kyle Frimel: shiny app on Philidelphia eagles, tons of offense and defense data
 Jack: shiny app on baseball data
 
+## April something
+
+Trent Meyer: shiny app on frisbee, is coming along awesome!
+
+## April 18
+
+Caleb Hamlen: shiny app on Golf data
+
+## April 20
+
+Tom: R package!!! On covid data and some cool queries to graph. Fun to chat with a fellow R package
+

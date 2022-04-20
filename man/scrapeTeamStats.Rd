@@ -4,7 +4,7 @@
 \alias{scrapeTeamStats}
 \title{Scrape Team Statistics}
 \usage{
-scrapeTeamStats(gender = "women")
+scrapeTeamStats(conf = FALSE, gender = "women")
 }
 \value{
 returns a either women's or men's team statistics data. Returns women's data by default.

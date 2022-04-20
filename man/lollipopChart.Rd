@@ -4,7 +4,7 @@
 \alias{lollipopChart}
 \title{Make a Lollipop Chart}
 \usage{
-lollipopChart(var, gender = "women")
+lollipopChart(var, conf = FALSE, gender = "women")
 }
 \arguments{
 \item{var}{variable to graph, must be given as a string}

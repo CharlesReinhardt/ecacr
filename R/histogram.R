@@ -1,7 +1,7 @@
 histogram <- function(var, conf=FALSE, skaters=FALSE, gender="women") {
 
   # check valid variable name
-  if (!varIsValid(var, team=FALSE, skaters=skaters)) {
+  if (!varIsValid(var, type="individual")) {
     stop(paste0(var, " not a valid variable name"))
   }
 

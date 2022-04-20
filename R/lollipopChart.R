@@ -14,7 +14,7 @@
 lollipopChart <- function(var, conf=FALSE, gender="women") {
 
   # check for invalid variable names
-  if (!varIsValid(var, team=TRUE)) {
+  if (!varIsValid(var, type="team")) {
     stop(paste0(var, " not a valid variable name"))
   }
 
