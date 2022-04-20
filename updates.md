@@ -66,10 +66,12 @@ Fixed scraping game stats and worked on manipulating the date column into an act
 
 Documented win/loss function, cleaned up some old functions. Implemented conference and non-conference capabilities for team data, as well as for their associated visualizations. Wrote formal tests for winLossChart. 108 tests! Inflating test count well!!
 
+## April 20 before class
 
-# TODO make boxplot function
+Made a boxplot function, but didn't like it. Modified it to take game stats (a function I just made, to scrape all game stats) and liked it. Likely going to finish off with graphs and start working on learnr or other documentation form.
+
+
 # TODO make some individual game stats graphs
-# TODO scrape all game stats
 
 # TODO start looking at final product: learnr, bookdown, some sort of package documentation other than source code
 

@@ -1,26 +1,29 @@
 #' Check Variable Name Validity
 #'
 #' @param variableName name of Variable to check
-#' @param team TRUE if checking team variable names, FALSE otherwise
-#' @param skaters TRUE if checking skater variable name, FALSE if checking goalie variable names, NULL otherwise
+#' @param type must be one of 'team', 'skater', 'goalie', 'game'
 #'
 #' @return TRUE if variableName is valid, FALSE otherwise
 #'
 #' @examples
-varIsValid <- function(variableName, team, skaters=NULL) {
-  if (team) {
+varIsValid <- function(variableName, type) {
+  if (!(type %in% c("team", "skater", "goalie", "game"))) {
+    stop("variable type must be one of 'team', 'skater', 'goalie', or 'game")
+  }
+
+  if (type == "team") {
     # checking team variables
     vars <- names(scrapeTeamStats())
+  } else if (type == "skater") {
+    # checking skater variable names
+    vars <- names(scrapeIndivStatsByTeam(team="brown", skaters=TRUE))
+  } else if (type == "goalie") {
+    # checking goalie variable names
+    vars <- names(scrapeIndivStatsByTeam(team="brown", skaters=FALSE))
   } else {
-    if (skaters) {
-      # checking skater variable names
-      vars <- names(scrapeIndivStatsByTeam(team="brown", skaters=TRUE))
-    } else {
-      # checking goalie variable names
-      vars <- names(scrapeIndivStatsByTeam(team="brown", skaters=FALSE))
-    }
+    vars <- names(scrapeGameStatsByTeam(team="brown"))
   }
-  vars <- names(scrapeTeamStats())
+
   variableName %in% vars
 }
 

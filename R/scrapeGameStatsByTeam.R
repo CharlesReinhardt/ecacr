@@ -22,7 +22,7 @@ scrapeGameStatsByTeam <- function(team, season="2021-22", gender="women") {
   }
 
   url <- paste0("https://www.ecachockey.com/", gender, "/", season, "/teams/", team)
-  tab <- rvest::read_html(url) %>% rvest::html_table()
+  tab <- rvest::read_html(url) %>% rvest::html_table(na.strings="-")
 
   year1 <- str_split(season, "-")[[1]][1]
   year2 <- paste0("20", str_split(season, "-")[[1]][2])
