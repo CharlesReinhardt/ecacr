@@ -19,7 +19,7 @@
 boxplot <- function(var, gender="women") {
 
   if (!varIsValid(var, type="game")) {
-    stop(paste0(var, " not a valid variable"))
+    stop(paste0(var, " not a valid variable for games data"))
   }
 
   data <- scrapeGameStats(gender=gender)

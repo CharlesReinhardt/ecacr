@@ -10,6 +10,7 @@
 #'
 #' @return a ggplot2 histogram object
 #' @export
+#' @import ggplot2
 #'
 #' @examples
 #' histogram(var="Saves")
@@ -17,12 +18,12 @@
 histogram <- function(var, games="all", players="goalies", gender="women") {
 
   # check valid variable name
-  if (!varIsValid(var, type="individual")) {
-    stop(paste0(var, " not a valid variable name"))
+  if (!varIsValid(var, type=players)) {
+    stop(paste0(var, " not a valid variable name for ", players, " data"))
   }
 
-  data <- scrapeIndivStats(conf=conf, skaters=skaters, gender=gender)
-  title <- paste0(var, " in ", titleCase(gender), "'s ECAC")
+  data <- scrapeIndivStats(games=games, players=players, gender=gender)
+  title <- paste0(var, " in ", stringr::str_to_title(gender), "'s ECAC")
 
   if (games == "conference") {
     title <- paste0(title, " (Conference Only)")

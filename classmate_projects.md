@@ -31,3 +31,7 @@ Caleb Hamlen: shiny app on Golf data
 
 Tom: R package!!! On covid data and some cool queries to graph. Fun to chat with a fellow R package
 
+## April 25
+
+Emil: shiny app on empty net shots analysis, part of his SYE. Really cool and looks nice
+

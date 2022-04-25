@@ -12,6 +12,7 @@
 #'
 #' @return a ggplot2 lollipop chart object
 #' @export
+#' @import ggplot2 dplyr
 #'
 #' @examples
 #' overallLeaders(var="Saves")
@@ -20,21 +21,21 @@ overallLeaders <- function(var, n_leaders=10, games="all", players="goalies", ge
 
   # check valid variable
   if (!varIsValid(var, type=players)) {
-    stop(paste0(var, " is not a valid variable for ", players))
+    stop(paste0(var, " is not a valid variable for ", players, " data"))
   }
 
-  data <- scrapeIndivStats(games=game, skaters=skaters, gender=gender, verbose=verbose)
+  data <- scrapeIndivStats(games=games, players=players, gender=gender, verbose=verbose)
 
-  title <- paste0("Overall ", var, " Leaders in ", str_to_title(gender), "'s ECAC")
-  if (conf) {
+  title <- paste0("Overall ", var, " Leaders in ", stringr::str_to_title(gender), "'s ECAC")
+  if (games == "conference") {
     title <- paste0(title, " (Conference Only)")
   }
 
   dataLeaders <- data %>%
     slice_max(.data[[var]], n=n_leaders) %>%
-    mutate(Name = paste0( Name, " (", str_to_title(Team), ")" )) %>%
+    mutate(Name = paste0( Name, " (", stringr::str_to_title(Team), ")" )) %>%
     mutate(Name = factor(Name)) %>%
-    mutate(Name = fct_reorder(Name, .data[[var]]))
+    mutate(Name = forcats::fct_reorder(Name, .data[[var]]))
 
   plot <- ggplot(data=dataLeaders, aes(x = Name, y = .data[[var]])) +
     geom_segment(aes(xend=Name, y=0, yend=.data[[var]])) +

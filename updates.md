@@ -80,10 +80,13 @@ Refactored function argument style to be uniform (and better) across the package
 
 ## April 25 end of class
 
-# TODO start looking at final product: learnr, bookdown, some sort of package documentation/presentation other than source code
+got a github pages pkgdown site up and running! It is currently super empty (obviously). Working on fixing a couple broken functions.
+
+# TODO develop README.Rmd for gh_pages site
+# TODO how to publish package? or how to download unpublished package?
 
 # TODO test histogram function
-# TODO test winLoss function
 # TODO test boxplot function
+# TODO test overallLeaders Function
 
 

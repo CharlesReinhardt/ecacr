@@ -20,7 +20,7 @@ scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE) {
 
   # check for invalid variable names
   if (!varIsValid(x, type="team")) {
-    stop(paste0(x, " not a valid variable name"))
+    stop(paste0(x, " not a valid variable name for team data"))
   }
 
   if (!varIsValid(y, type="team")) {
