@@ -3,3 +3,7 @@
 ^LICENSE\.md$
 ^updates\.md$
 ^classmate_projects\.md$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

@@ -78,6 +78,7 @@ Adjusted some utils function uses. Worked on an overall leaders graph. Put it in
 
 Refactored function argument style to be uniform (and better) across the package. Wrote roxygen documentation (relatively uniform) for all package functions. Ensured package was still passing tests (by modifying function calls etc.)
 
+## April 25 end of class
 
 # TODO start looking at final product: learnr, bookdown, some sort of package documentation/presentation other than source code
 
