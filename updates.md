@@ -83,7 +83,7 @@ Refactored function argument style to be uniform (and better) across the package
 got a github pages pkgdown site up and running! It is currently super empty (obviously). Working on fixing a couple broken functions.
 
 # TODO develop README.Rmd for gh_pages site
-# TODO how to publish package? or how to download unpublished package?
+# TODO how to publish package? or how to download unpublished package?4
 
 # TODO test histogram function
 # TODO test boxplot function
