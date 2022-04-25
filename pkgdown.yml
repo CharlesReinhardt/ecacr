@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 2.0.3
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-04-25T13:14Z
+last_built: 2022-04-25T14:19Z
 urls:
   reference: https://charlesreinhardt.github.io/ecacr/reference
   article: https://charlesreinhardt.github.io/ecacr/articles
