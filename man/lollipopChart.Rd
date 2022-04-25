@@ -2,23 +2,25 @@
 % Please edit documentation in R/lollipopChart.R
 \name{lollipopChart}
 \alias{lollipopChart}
-\title{Make a Lollipop Chart}
+\title{Produce a ggplot2 Lollipop Chart}
 \usage{
-lollipopChart(var, conf = FALSE, gender = "women")
+lollipopChart(var, games = "all", gender = "women")
 }
 \arguments{
-\item{var}{variable to graph, must be given as a string}
+\item{var}{summary statistic to display}
 
-\item{gender}{gender of data to graph}
+\item{games}{graphing 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games}
+
+\item{gender}{"women' (default) or 'men'}
 }
 \value{
-returns a lollipop chart of the given variable, separated by team. Plots Games Played by default.
+a ggplot2 lollipop chart object
 }
 \description{
-Make a Lollipop Chart
+Create a ggplot2 lollipop chart (alternative to a bar chart) of overall season summary
+statistics of all ECAC teams.
 }
 \examples{
-lollipopChart()
-lollipopChart("Goals")
-lollipopChart("Goals", "men")
+lollipopChart(var="Wins")
+lollipopChart(var="PenaltyMinutes", games="conference", gender="men")
 }

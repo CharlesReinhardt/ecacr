@@ -2,18 +2,22 @@
 % Please edit documentation in R/scrapeTeamStats.R
 \name{scrapeTeamStats}
 \alias{scrapeTeamStats}
-\title{Scrape Team Statistics}
+\title{Scrape Team Summary Statistics}
 \usage{
-scrapeTeamStats(conf = FALSE, gender = "women")
+scrapeTeamStats(games = "all", gender = "women")
+}
+\arguments{
+\item{games}{collecting data for 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games}
+
+\item{gender}{'women' (default) or 'men'}
 }
 \value{
-returns a either women's or men's team statistics data. Returns women's data by default.
+data frame of summary team statistics
 }
 \description{
-Scrape Team Statistics
+Web scrape (using rvest) team summary statistics for the current ECAC season
 }
 \examples{
 scrapeTeamStats()
-scrapeTeamStats(gender="women")
-scrapeTeamStats(gender="men")
+scrapeTeamStats(games="conference", gender="men")
 }

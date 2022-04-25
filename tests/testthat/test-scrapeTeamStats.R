@@ -1,15 +1,15 @@
 test_that("scrapeTeamStats dimensions are expected", {
   expect_equal(
-    dim(scrapeTeamStats(conf=TRUE, gender="women"))[2], 21
+    dim(scrapeTeamStats(games="conference", gender="women"))[2], 21
     )
   expect_equal(
-    dim(scrapeTeamStats(conf=TRUE,gender="men"))[2], 21
+    dim(scrapeTeamStats(games="conference", gender="men"))[2], 21
     )
   expect_equal(
-    dim(scrapeTeamStats(conf=FALSE, gender="women"))[2], 21
+    dim(scrapeTeamStats(games="all", gender="women"))[2], 21
   )
   expect_equal(
-    dim(scrapeTeamStats(conf=FALSE,gender="men"))[2], 21
+    dim(scrapeTeamStats(games="all", gender="men"))[2], 21
   )
 })
 

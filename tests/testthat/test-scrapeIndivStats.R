@@ -1,11 +1,11 @@
-data <- scrapeIndivStats(conf=FALSE, skaters=FALSE, gender="women", verbose=FALSE)
-data2 <- scrapeIndivStats(conf=TRUE, skaters=FALSE, gender="women", verbose=FALSE)
-data3 <- scrapeIndivStats(conf=FALSE, skaters=TRUE, gender="women", verbose=FALSE)
-data4 <- scrapeIndivStats(conf=TRUE, skaters=TRUE, gender="women", verbose=FALSE)
-data5 <- scrapeIndivStats(conf=FALSE, skaters=FALSE, gender="men", verbose=FALSE)
-data6 <- scrapeIndivStats(conf=TRUE, skaters=FALSE, gender="men", verbose=FALSE)
-data7 <- scrapeIndivStats(conf=FALSE, skaters=TRUE, gender="men", verbose=FALSE)
-data8 <- scrapeIndivStats(conf=TRUE, skaters=TRUE, gender="men", verbose=FALSE)
+data <- scrapeIndivStats(games="all", players="goalies", gender="women", verbose=FALSE)
+data2 <- scrapeIndivStats(games="conference", players="goalies", gender="women", verbose=FALSE)
+data3 <- scrapeIndivStats(games="all", players="skaters", gender="women", verbose=FALSE)
+data4 <- scrapeIndivStats(games="conference", players="skaters", gender="women", verbose=FALSE)
+data5 <- scrapeIndivStats(games="all", players="goalies", gender="men", verbose=FALSE)
+data6 <- scrapeIndivStats(games="conference", players="goalies", gender="men", verbose=FALSE)
+data7 <- scrapeIndivStats(games="all", players="skaters", gender="men", verbose=FALSE)
+data8 <- scrapeIndivStats(games="conference", players="skaters", gender="men", verbose=FALSE)
 
 test_that("scrapeIndivStats dimensions are as expected", {
 

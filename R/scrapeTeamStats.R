@@ -1,13 +1,22 @@
-#' Scrape Team Statistics
+#' Scrape Team Summary Statistics
 #'
-#' @return returns a either women's or men's team statistics data. Returns women's data by default.
+#' Web scrape (using rvest) team summary statistics for the current ECAC season
+#'
+#' @param games collecting data for 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games
+#' @param gender 'women' (default) or 'men'
+#'
+#' @return data frame of summary team statistics
 #' @export
 #'
 #' @examples
 #' scrapeTeamStats()
-#' scrapeTeamStats(gender="women")
-#' scrapeTeamStats(gender="men")
-scrapeTeamStats <- function(conf=FALSE, gender="women") {
+#' scrapeTeamStats(games="conference", gender="men")
+scrapeTeamStats <- function(games="all", gender="women") {
+
+  # check if games argument is valid
+  if (!gamesIsValid(games)) {
+    stop("games argument must be 'all', 'conference', or 'nonconference'")
+  }
 
   # throw an error
   if (!genderIsValid(gender)) {
@@ -19,7 +28,7 @@ scrapeTeamStats <- function(conf=FALSE, gender="women") {
 
   index <- 1
 
-  if (conf) {
+  if (games == "conference") {
     index <- index + 1
   }
 

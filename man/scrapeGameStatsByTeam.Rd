@@ -2,18 +2,22 @@
 % Please edit documentation in R/scrapeGameStatsByTeam.R
 \name{scrapeGameStatsByTeam}
 \alias{scrapeGameStatsByTeam}
-\title{Scrape Game by Game stats by team}
+\title{Scrape Game Statistics for one season (of one team) of ECAC hockey games}
 \usage{
-scrapeGameStatsByTeam(team, season = "2021-22", gender = "women")
+scrapeGameStatsByTeam(team, gender = "women")
 }
 \arguments{
-\item{team}{chosen team to scrape}
+\item{team}{ECAC team to scrape data for}
 
-\item{gender}{gender of data to scrape}
+\item{gender}{'women' (default) or 'men'}
 }
 \value{
-a dataframe of ecac data for a given team and gender
+dataframe of game statistics
 }
 \description{
-Scrape Game by Game stats by team
+Webscrape (using rvest) skater and goalie statistics for one team's games this season
+}
+\examples{
+scrapeGameStatsByTeam(team="brown")
+scrapeGameStatsByTeam(team="stlawrence", gender="men", verbose=FALSE)
 }

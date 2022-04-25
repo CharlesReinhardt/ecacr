@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{genderIsValid}
 \alias{genderIsValid}
-\title{Checks gender is formatted correctly}
+\title{Checks Gender Formatting}
 \usage{
 genderIsValid(gender)
 }
@@ -13,5 +13,10 @@ genderIsValid(gender)
 TRUE if gender is formatted correctly, FALSE otherwise
 }
 \description{
-Checks gender is formatted correctly
+Checks that the gender argument provided is formatted correctly for ecacr processing
+}
+\examples{
+genderIsValid(gender="women") # TRUE
+genderIsValid(gender="WOMEN") # FALSE
+genderIsValid(gender="W") # FALSE
 }

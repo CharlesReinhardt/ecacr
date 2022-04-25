@@ -2,27 +2,31 @@
 % Please edit documentation in R/scrapeIndivStats.R
 \name{scrapeIndivStats}
 \alias{scrapeIndivStats}
-\title{Scrape Individual Player Statistics (all ECAC Teams, one gender)}
+\title{Scrape Individual Player Statistics}
 \usage{
 scrapeIndivStats(
-  conf = FALSE,
-  skaters = FALSE,
+  games = "all",
+  players = "goalies",
   gender = "women",
   verbose = TRUE
 )
 }
 \arguments{
-\item{conf}{TRUE for ecac data only, FALSE for conference and non-conference}
+\item{games}{collecting data for 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games}
 
-\item{skaters}{TRUE for skater data, FALSE for goalie data}
+\item{players}{type of players stats to collect, 'goalies' (default) or 'skaters'}
 
-\item{gender}{"women" for women's data, "men" for men's data}
+\item{gender}{'women' (default) or 'men'}
 
-\item{verbose}{TRUE for extra output during runtime, FALSE for no extra output}
+\item{verbose}{TRUE (default) for intermediate data scraping output messages, FALSE for no additional output}
 }
 \value{
 data frame of individual player statistics for all ECAC teams
 }
 \description{
-Scrape Individual Player Statistics (all ECAC Teams, one gender)
+Webscrape (using rvest) all individual player statistics for the current season
+}
+\examples{
+scrapeIndivStats()
+scrapeIndivStats(games="conference", players="skaters", gender="men", verbose=FALSE)
 }

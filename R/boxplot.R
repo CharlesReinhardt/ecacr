@@ -1,20 +1,29 @@
-#' Produce a Boxplot of your variable of choice
+#' Produce a ggplot2 Boxplot
+#'
+#' Create a ggplot2 boxplot displaying the distribution of a given variable. Does so by
+#' grouping the variable of choice by ECAC team, and displaying the value of variable
+#' for each ECAC game.
 #'
 #' @param var variable to plot
-#' @param gender women or men
+#' @param gender 'women' (default) or 'men'
 #'
-#' @return
+#' @return a ggplot2 boxplot object
 #' @export
 #'
+#' @import ggplot2
+#' @import dplyr
+#'
 #' @examples
+#' boxplot(var="Goals", gender="women")
+#' boxplot(var="Assists", gender="men")
 boxplot <- function(var, gender="women") {
 
-  if (!varisValid(var, type="game")) {
+  if (!varIsValid(var, type="game")) {
     stop(paste0(var, " not a valid variable"))
   }
 
   data <- scrapeGameStats(gender=gender)
-  title <- paste0(var, " (each game) by team in ", str_to_title(gender), "'s ECAC")
+  title <- paste0(var, " (each game) by team in ", stringr::str_to_title(gender), "'s ECAC")
 
   dataModified <- data %>%
     mutate(Team = str_to_title(Team)) %>%
@@ -22,7 +31,7 @@ boxplot <- function(var, gender="women") {
     group_by(Team) %>%
     mutate(median = median(na.omit(.data[[var]]))) %>%
     ungroup() %>%
-    mutate(Team = fct_reorder(Team, median)) %>%
+    mutate(Team = forcats::fct_reorder(Team, median)) %>%
     group_by(Team)
 
   plot <- ggplot(dataModified, aes(x = Team)) +

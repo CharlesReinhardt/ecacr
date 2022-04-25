@@ -2,26 +2,29 @@
 % Please edit documentation in R/scatterPlot.R
 \name{scatterPlot}
 \alias{scatterPlot}
-\title{Scatter Plot of Two Variables}
+\title{Produce a ggplot2 Scatter Plot}
 \usage{
-scatterPlot(x, y, trend = FALSE, conf = FALSE, gender = "women")
+scatterPlot(x, y, games = "all", gender = "women", trend = FALSE)
 }
 \arguments{
-\item{x}{variable on the x-axis of the scatterplot}
+\item{x}{x-axis variable}
 
-\item{y}{variable on the y-axis of the scatterplot}
+\item{y}{y-axis variable}
 
-\item{trend}{TRUE/FALSE, whether to display a smoothing trend line to the scatter plot}
+\item{games}{graphing 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games}
 
-\item{gender}{gender of data to graph, default to "women"}
+\item{gender}{'women' (default) or 'men'}
+
+\item{trend}{TRUE (default) for smoothing trend line, FALSE for no trend line}
 }
 \value{
-a scatter plot of the two given variables
+a ggplot2 scatter plot object
 }
 \description{
-Scatter Plot of Two Variables
+Create a ggplot2 scatter plot object of summary team statistics. Can display a trend line
+if desired.
 }
 \examples{
-scatterPlot("Goals", "Assists", TRUE)
-scatterPlot("Goals", "Assists", FALSE, "men")
+scatterPlot(x="Goals", y="Wins")
+scatterPLot(x="Assists", y="PenaltyMinutes", games="conference", gender="men", trend=TRUE)
 }

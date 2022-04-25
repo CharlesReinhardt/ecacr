@@ -1,17 +1,29 @@
-overallLeaders <- function(var, n_leaders=10, conf=FALSE, skaters=FALSE, gender="women", verbose=TRUE) {
+#' Produce a Chart of Individual Overall Season Leaders
+#'
+#' Creates a ggplot2 lollipop chart (bar chart alternative) object. Displays the overall individual leaders of
+#' a given player statistic. Also provides the player's team.
+#'
+#' @param var summary statistic to plot
+#' @param n_leaders number of leaders to plot (default is 10)
+#' @param games graphing 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games
+#' @param players type of players stats to graph, 'goalies' (default) or 'skaters'
+#' @param gender 'women' (default) or 'men'
+#' @param verbose TRUE (default) for intermediate data scraping output messages, FALSE for no additional output
+#'
+#' @return a ggplot2 lollipop chart object
+#' @export
+#'
+#' @examples
+#' overallLeaders(var="Saves")
+#' overallLeaders(var="Assists", n_leaders=15, games="conference", players="skaters", gender="men", verbose=FALSE)
+overallLeaders <- function(var, n_leaders=10, games="all", players="goalies", gender="women", verbose=TRUE) {
 
   # check valid variable
-  type <- if_else(skaters, "skater", "goalie")
-  if (!varIsValid(var, type=type)) {
-    stop(paste0(var, " is not a valid variable for ", type))
+  if (!varIsValid(var, type=players)) {
+    stop(paste0(var, " is not a valid variable for ", players))
   }
 
-  # check valid gender
-  if (!genderIsValid(gender)) {
-    stop("invalid gender argument, must be either 'women' or 'men'")
-  }
-
-  data <- scrapeIndivStats(conf=conf, skaters=skaters, gender=gender, verbose=verbose)
+  data <- scrapeIndivStats(games=game, skaters=skaters, gender=gender, verbose=verbose)
 
   title <- paste0("Overall ", var, " Leaders in ", str_to_title(gender), "'s ECAC")
   if (conf) {

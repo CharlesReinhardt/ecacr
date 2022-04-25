@@ -2,18 +2,22 @@
 % Please edit documentation in R/scrapeGameStats.R
 \name{scrapeGameStats}
 \alias{scrapeGameStats}
-\title{Scrape data for all ECAC games}
+\title{Scrape Game Statistics for one season of ECAC hockey games}
 \usage{
 scrapeGameStats(gender = "women", verbose = TRUE)
 }
 \arguments{
-\item{gender}{the given gender to scrape games for}
+\item{gender}{'women' (default) or 'men'}
 
-\item{verbose}{TRUE for additional output, FALSE for no additional output}
+\item{verbose}{TRUE (default) for intermediate data scraping output messages, FALSE for no additional output}
 }
 \value{
-
+dataframe of game statistics
 }
 \description{
-Scrape data for all ECAC games
+Webscrape (using rvest) skater and goalie statistics for all ECAC games this season
+}
+\examples{
+scrapeGameStats()
+scrapeGameStats(gender="men", verbose=FALSE)
 }

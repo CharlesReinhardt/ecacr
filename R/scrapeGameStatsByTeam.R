@@ -1,15 +1,21 @@
-#' Scrape Game by Game stats by team
+#' Scrape Game Statistics for one season (of one team) of ECAC hockey games
 #'
-#' @param team chosen team to scrape
-#' @param gender gender of data to scrape
+#' Webscrape (using rvest) skater and goalie statistics for one team's games this season
 #'
-#' @return a dataframe of ecac data for a given team and gender
+#' @param team ECAC team to scrape data for
+#' @param gender 'women' (default) or 'men'
+#'
+#' @return dataframe of game statistics
 #' @export
 #'
 #' @import stringr
 #'
 #' @examples
-scrapeGameStatsByTeam <- function(team, season="2021-22", gender="women") {
+#' scrapeGameStatsByTeam(team="brown")
+#' scrapeGameStatsByTeam(team="stlawrence", gender="men", verbose=FALSE)
+scrapeGameStatsByTeam <- function(team, gender="women") {
+
+  season <- "2021-22"
 
   # check valid team
   if (!teamIsValid(team)) {
@@ -21,7 +27,7 @@ scrapeGameStatsByTeam <- function(team, season="2021-22", gender="women") {
     stop("not a valid gender argument")
   }
 
-  url <- paste0("https://www.ecachockey.com/", gender, "/", season, "/teams/", team)
+  url <- paste0("https://www.ecachockey.com/", gender, "/2021-22/teams/", team)
   tab <- rvest::read_html(url) %>% rvest::html_table(na.strings="-")
 
   year1 <- str_split(season, "-")[[1]][1]

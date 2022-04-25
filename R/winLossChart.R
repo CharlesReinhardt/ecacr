@@ -1,27 +1,21 @@
-#' Produce a chart visualizing the wins and losses of a team
+#' Produce a Win/Loss ggplot2 Bar Chart
 #'
-#' @param team the team you'd like to investigate
-#' @param byLocation TRUE to split Home/Away, FALSE otherwise (default TRUE)
-#' @param gender gender you'd like to investigate (default "women")
+#' Creates a ggplot2 bar chart object visualizing the wins and losses of a given ECAC team.
+#' Can be faceted by home/away.
 #'
-#' @return
+#' @param team ECAC team to visualize
+#' @param byLocation TRUE (default) to split Home/Away, FALSE otherwise
+#' @param gender 'women' (default) or 'men'
+#'
+#' @return ggplot2 bar chart object
 #' @export
 #'
 #' @import ggplot2
 #'
 #' @examples
-winLossChart <- function(team, byLocation=TRUE, gender="women") {
-
-  # check valid team name
-  if (!teamIsValid(team)) {
-    message <- paste0(team, " not a valid team name")
-    stop(message)
-  }
-
-  # check valid gender
-  if (!genderIsValid(gender)) {
-    stop("gender argument must either be 'women' or 'men'")
-  }
+#' winLossChart(team="brown")
+#' winLossChart(team="clarkson", gender="men", byLocation=FALSE)
+winLossChart <- function(team, gender="women", byLocation=TRUE) {
 
   data <- scrapeGameStatsByTeam(team=team, gender=gender) %>%
     dplyr::mutate(Location = dplyr::if_else(Home, "Home", "Away"),

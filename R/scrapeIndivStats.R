@@ -1,24 +1,28 @@
-#' Scrape Individual Player Statistics (all ECAC Teams, one gender)
+#' Scrape Individual Player Statistics
 #'
-#' @param conf TRUE for ecac data only, FALSE for conference and non-conference
-#' @param skaters TRUE for skater data, FALSE for goalie data
-#' @param gender "women" for women's data, "men" for men's data
-#' @param verbose TRUE for extra output during runtime, FALSE for no extra output
+#' Webscrape (using rvest) all individual player statistics for the current season
+#'
+#' @param gender 'women' (default) or 'men'
+#' @param verbose TRUE (default) for intermediate data scraping output messages, FALSE for no additional output
+#' @param games collecting data for 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games
+#' @param players type of players stats to collect, 'goalies' (default) or 'skaters'
 #'
 #' @return data frame of individual player statistics for all ECAC teams
 #' @export
 #'
 #' @examples
-scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women", verbose=TRUE) {
+#' scrapeIndivStats()
+#' scrapeIndivStats(games="conference", players="skaters", gender="men", verbose=FALSE)
+scrapeIndivStats <- function(games="all", players="goalies", gender="women", verbose=TRUE) {
 
-  # check valid conf argument
-  if (typeof(conf) != "logical") {
-    stop("conf argument must either be TRUE or FALSE")
+  # check valid games argument
+  if (!gamesIsValid(games)) {
+    stop("games argument must be 'all', 'conference', or 'nonconference'")
   }
 
-  # check valid skaters argument
-  if (typeof(skaters) != "logical") {
-    stop("skaters argument must either be TRUE or FALSE")
+  # check valid players argument
+  if (!playersIsValid(players)) {
+    stop("players argument must be 'goalies' or 'skaters'")
   }
 
   teamNames <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
@@ -32,7 +36,7 @@ scrapeIndivStats <- function(conf=FALSE, skaters=FALSE, gender="women", verbose=
     if (verbose) {
       message(paste0("scraping data from ", str_to_title(team)))
     }
-    newTeamData <- scrapeIndivStatsByTeam(team, conf=conf, skaters=skaters, gender=gender) %>%
+    newTeamData <- scrapeIndivStatsByTeam(team, games=games, players=players, gender=gender) %>%
       dplyr::mutate(Team = team)
     data <- dplyr::bind_rows(data, newTeamData)
   }

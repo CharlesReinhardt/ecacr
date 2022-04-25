@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{teamIsValid}
 \alias{teamIsValid}
-\title{Check that a team name is valid}
+\title{Check Team Name Validity}
 \usage{
 teamIsValid(team)
 }
@@ -13,5 +13,9 @@ teamIsValid(team)
 TRUE if team is in ECAC and formatted correctly, FALSE otherwise
 }
 \description{
-Check that a team name is valid
+Checks that a provided team name
+}
+\examples{
+teamIsValid(team="rensselaer") # TRUE
+teamIsValid(team="RIT") # FALSE
 }

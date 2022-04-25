@@ -74,9 +74,12 @@ Made a boxplot function, but didn't like it. Modified it to take game stats (a f
 
 Adjusted some utils function uses. Worked on an overall leaders graph. Put it into R folder. Updated classmate_projects document that I've been forgetting to update for a few weeks, sorry! Totally unintentional, has been good to chat with classmates about their projects.
 
+## April 25 beginning of class
+
+Refactored function argument style to be uniform (and better) across the package. Wrote roxygen documentation (relatively uniform) for all package functions. Ensured package was still passing tests (by modifying function calls etc.)
 
 
-# TODO start looking at final product: learnr, bookdown, some sort of package documentation other than source code
+# TODO start looking at final product: learnr, bookdown, some sort of package documentation/presentation other than source code
 
 # TODO test histogram function
 # TODO test winLoss function

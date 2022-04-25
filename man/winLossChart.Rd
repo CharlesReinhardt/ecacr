@@ -2,20 +2,25 @@
 % Please edit documentation in R/winLossChart.R
 \name{winLossChart}
 \alias{winLossChart}
-\title{Produce a chart visualizing the wins and losses of a team}
+\title{Produce a Win/Loss ggplot2 Bar Chart}
 \usage{
-winLossChart(team, byLocation = TRUE, gender = "women")
+winLossChart(team, gender = "women", byLocation = TRUE)
 }
 \arguments{
-\item{team}{the team you'd like to investigate}
+\item{team}{ECAC team to visualize}
 
-\item{byLocation}{TRUE to split Home/Away, FALSE otherwise (default TRUE)}
+\item{gender}{'women' (default) or 'men'}
 
-\item{gender}{gender you'd like to investigate (default "women")}
+\item{byLocation}{TRUE (default) to split Home/Away, FALSE otherwise}
 }
 \value{
-
+ggplot2 bar chart object
 }
 \description{
-Produce a chart visualizing the wins and losses of a team
+Creates a ggplot2 bar chart object visualizing the wins and losses of a given ECAC team.
+Can be faceted by home/away.
+}
+\examples{
+winLossChart(team="brown")
+winLossChart(team="clarkson", gender="men", byLocation=FALSE)
 }

@@ -1,12 +1,16 @@
-#' Scrape data for all ECAC games
+#' Scrape Game Statistics for one season of ECAC hockey games
 #'
-#' @param gender the given gender to scrape games for
-#' @param verbose TRUE for additional output, FALSE for no additional output
+#' Webscrape (using rvest) skater and goalie statistics for all ECAC games this season
 #'
-#' @return
+#' @param gender 'women' (default) or 'men'
+#' @param verbose TRUE (default) for intermediate data scraping output messages, FALSE for no additional output
+#'
+#' @return dataframe of game statistics
 #' @export
 #'
 #' @examples
+#' scrapeGameStats()
+#' scrapeGameStats(gender="men", verbose=FALSE)
 scrapeGameStats <- function(gender="women", verbose=TRUE) {
   teamNames <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",
                  "princeton", "quinnipiac", "rensselaer", "stlawrence", "union", "yale")

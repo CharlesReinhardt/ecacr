@@ -1,31 +1,33 @@
-#' Scrape Individual Statistics (for one ECAC team)
+#' Scrape Individual Player Statistics For One Team
 #'
-#' @param team team of choice
-#' @param conf TRUE for ecac data only, FALSE for conference and non-conference
-#' @param skaters TRUE for skater data, FALSE for goalie data
-#' @param gender "women" for women's data, "men" for men's data
+#' Webscrape (using rvest) all individual player statistics of a given team for the current season
 #'
-#' @return data frame of individual statistics of given parameters
+#' @param gender 'women' (default) or 'men'
+#' @param games collecting data for 'all' (default), 'conference', or 'nonconference' games. Currently no support for 'nonconference' games
+#' @param players type of players stats to collect, 'goalies' (default) or 'skaters'
+#' @param team ECAC team to scrape data for
+#'
+#' @return data frame of individual player statistics for one ECAC team
 #' @export
 #'
 #' @examples
-scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="women") {
+#' scrapeIndivStatsByTeam(team="brown")
+#' scrapeIndivStatsByTeam(team="clarkson", games="conference", players="skaters", gender="men")
+scrapeIndivStatsByTeam <- function(team, games="all", players="goalies", gender="women") {
 
-  # TODO how to test this
 
   # check valid team
   if (!teamIsValid(team)) {
     stop("not a valid team name")
   }
 
-  # check valid conf argument
-  if (typeof(conf) != "logical") {
-    stop("conf argument must either be TRUE or FALSE")
+  # check valid games argument
+  if (!gamesIsValid(games)) {
+    stop("games argument must be 'all', 'conference', or 'nonconference'")
   }
 
-  # check valid skaters argument
-  if (typeof(skaters) != "logical") {
-    stop("skaters argument must either be TRUE or FALSE")
+  if (!playersIsValid(players)) {
+    stop("players argument must be 'goalies' or 'skaters'")
   }
 
   # check valid gender
@@ -38,11 +40,11 @@ scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="wome
 
   index <- 0
 
-  if (conf) {
+  if (games == "conference") {
     index <- index + 4
   }
 
-  if (skaters) {
+  if (players == "skaters") {
     index <- index + 5
     data <- tab[[index]] %>% dplyr::filter(!is.na(No.))
     dataRenamed <- data %>%
@@ -63,6 +65,7 @@ scrapeIndivStatsByTeam <- function(team, conf=FALSE, skaters=FALSE, gender="wome
                     HatTricks = hat,
                     Shots = s)
   } else {
+    # goalies
     index <- index + 7
     data <- tab[[index]] %>% dplyr::filter(!is.na(No.))
 

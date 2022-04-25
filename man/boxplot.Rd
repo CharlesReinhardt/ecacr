@@ -2,18 +2,24 @@
 % Please edit documentation in R/boxplot.R
 \name{boxplot}
 \alias{boxplot}
-\title{Produce a Boxplot of your variable of choice}
+\title{Produce a ggplot2 Boxplot}
 \usage{
 boxplot(var, gender = "women")
 }
 \arguments{
 \item{var}{variable to plot}
 
-\item{gender}{women or men}
+\item{gender}{'women' (default) or 'men'}
 }
 \value{
-
+a ggplot2 boxplot object
 }
 \description{
-Produce a Boxplot of your variable of choice
+Create a ggplot2 boxplot displaying the distribution of a given variable. Does so by
+grouping the variable of choice by ECAC team, and displaying the value of variable
+for each ECAC game.
+}
+\examples{
+boxplot(var="Goals", gender="women")
+boxplot(var="Assists", gender="men")
 }

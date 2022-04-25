@@ -9,11 +9,15 @@ varIsValid(variableName, type)
 \arguments{
 \item{variableName}{name of Variable to check}
 
-\item{type}{must be one of 'team', 'skater', 'goalie', 'game'}
+\item{type}{type of variable to check ('team', 'skaters', 'goalies', or' game')}
 }
 \value{
 TRUE if variableName is valid, FALSE otherwise
 }
 \description{
-Check Variable Name Validity
+Checks the validity of a given variable name for a certain type of ECAC hockey data
+}
+\examples{
+varIsValid(variableName="Goals", type="skaters") # TRUE
+varIsValid(varaibleName="Assists", type="goalies") # FALSE
 }
