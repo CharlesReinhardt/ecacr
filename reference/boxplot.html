@@ -48,7 +48,7 @@ for each ECAC game.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">boxplot</span><span class="op">(</span><span class="va">var</span>, gender <span class="op">=</span> <span class="st">"women"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">boxplot</span><span class="op">(</span><span class="va">var</span>, gender <span class="op">=</span> <span class="st">"women"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -65,11 +65,11 @@ for each ECAC game.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">boxplot</span><span class="op">(</span>var<span class="op">=</span><span class="st">"Goals"</span>, gender<span class="op">=</span><span class="st">"women"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">boxplot</span><span class="op">(</span>var<span class="op">=</span><span class="st">"Goals"</span>, gender<span class="op">=</span><span class="st">"women"</span>, verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::mutate(., Date = lubridate::mdy(Date)):</span> Problem while computing `Date = lubridate::mdy(Date)`.</span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `loadNamespace()`:</span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> there is no package called ‘lubridate’</span>
-<span class="r-in"><span class="fu">boxplot</span><span class="op">(</span>var<span class="op">=</span><span class="st">"Assists"</span>, gender<span class="op">=</span><span class="st">"men"</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu">boxplot</span><span class="op">(</span>var<span class="op">=</span><span class="st">"Assists"</span>, gender<span class="op">=</span><span class="st">"men"</span>, verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::mutate(., Date = lubridate::mdy(Date)):</span> Problem while computing `Date = lubridate::mdy(Date)`.</span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `loadNamespace()`:</span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> there is no package called ‘lubridate’</span>
