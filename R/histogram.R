@@ -13,16 +13,16 @@
 #' @import ggplot2
 #'
 #' @examples
-#' histogram(var="Saves")
-#' histogram(var="Goals", games="conference", players="skaters", gender="men")
-histogram <- function(var, games="all", players="goalies", gender="women") {
+#' histogram(var="Saves", verbose=FALSE)
+#' histogram(var="Goals", games="conference", players="skaters", gender="men", verbose=FALSE)
+histogram <- function(var, games="all", players="goalies", gender="women", verbose=TRUE) {
 
   # check valid variable name
   if (!varIsValid(var, type=players)) {
     stop(paste0(var, " not a valid variable name for ", players, " data"))
   }
 
-  data <- scrapeIndivStats(games=games, players=players, gender=gender)
+  data <- scrapeIndivStats(games=games, players=players, gender=gender, verbose=verbose)
   title <- paste0(var, " in ", stringr::str_to_title(gender), "'s ECAC")
 
   if (games == "conference") {

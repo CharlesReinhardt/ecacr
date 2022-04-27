@@ -18,7 +18,7 @@ lollipopChart <- function(var, games="all", gender="women") {
 
   # check for invalid variable names
   if (!varIsValid(var, type="team")) {
-    stop(paste0(var, " not a valid variable name for ", type, " data"))
+    stop(paste0(var, " not a valid variable name for team data"))
   }
 
   data <- scrapeTeamStats(games=games, gender=gender)

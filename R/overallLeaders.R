@@ -15,7 +15,7 @@
 #' @import ggplot2 dplyr
 #'
 #' @examples
-#' overallLeaders(var="Saves")
+#' overallLeaders(var="Saves", verbose=FALSE)
 #' overallLeaders(var="Assists", n_leaders=15, games="conference", players="skaters", gender="men", verbose=FALSE)
 overallLeaders <- function(var, n_leaders=10, games="all", players="goalies", gender="women", verbose=TRUE) {
 

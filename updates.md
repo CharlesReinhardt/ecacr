@@ -82,7 +82,13 @@ Refactored function argument style to be uniform (and better) across the package
 
 got a github pages pkgdown site up and running! It is currently super empty (obviously). Working on fixing a couple broken functions.
 
-# TODO develop README.Rmd for gh_pages site
+## April 27 beginning of class
+
+Made really good progress on a documentation thing for the package. Want to move to making graphs look prettier before my final submit.
+
+# TODO make boxplot, scatterplot, histogram prettier
+# TODO insert links for tidyverse, dplyr, ggplot2, and rvest
+
 # TODO how to publish package? or how to download unpublished package?4
 
 # TODO test histogram function

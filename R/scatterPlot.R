@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' scatterPlot(x="Goals", y="Wins")
-#' scatterPLot(x="Assists", y="PenaltyMinutes", games="conference", gender="men", trend=TRUE)
+#' scatterPlot(x="Assists", y="PenaltyMinutes", games="conference", gender="men", trend=TRUE)
 scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE) {
 
   # check for invalid variable names

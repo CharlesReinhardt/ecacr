@@ -14,15 +14,15 @@
 #' @import dplyr
 #'
 #' @examples
-#' boxplot(var="Goals", gender="women")
-#' boxplot(var="Assists", gender="men")
-boxplot <- function(var, gender="women") {
+#' boxplot(var="Goals", gender="women", verbose=FALSE)
+#' boxplot(var="Assists", gender="men", verbose=FALSE)
+boxplot <- function(var, gender="women", verbose=TRUE) {
 
   if (!varIsValid(var, type="game")) {
     stop(paste0(var, " not a valid variable for games data"))
   }
 
-  data <- scrapeGameStats(gender=gender)
+  data <- scrapeGameStats(gender=gender, verbose=verbose)
   title <- paste0(var, " (each game) by team in ", stringr::str_to_title(gender), "'s ECAC")
 
   dataModified <- data %>%

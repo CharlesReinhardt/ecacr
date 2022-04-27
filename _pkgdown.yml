@@ -2,3 +2,12 @@ url: https://charlesreinhardt.github.io/ecacr/
 template:
   bootstrap: 5
 
+home:
+  sidebar:
+    structure: [links, license, citation, authors]
+
+  links:
+  - text: Browse source code
+    href: https://github.com/CharlesReinhardt/ecacr
+  - text: Report a bug
+    href: https://github.com/CharlesReinhardt/ecacr/issues
