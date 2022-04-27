@@ -21,6 +21,6 @@ Create a ggplot2 lollipop chart (alternative to a bar chart) of overall season s
 statistics of all ECAC teams.
 }
 \examples{
-lollipopChart(var="Wins")
+lollipopChart(var="Goals")
 lollipopChart(var="PenaltyMinutes", games="conference", gender="men")
 }

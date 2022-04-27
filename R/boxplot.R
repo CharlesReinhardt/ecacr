@@ -34,10 +34,12 @@ boxplot <- function(var, gender="women", verbose=TRUE) {
     mutate(Team = forcats::fct_reorder(Team, median)) %>%
     group_by(Team)
 
-  plot <- ggplot(dataModified, aes(x = Team)) +
+  plot <- ggplot(dataModified, aes(x = Team, fill=Team)) +
     geom_boxplot(aes_string(y=var)) +
     coord_flip() +
-    labs(title = title)
+    labs(title = title) +
+    scale_fill_brewer(palette="Set3") +
+    guides(fill="none")
 
   plot
 }

@@ -33,7 +33,9 @@ winLossChart <- function(team, gender="women", byLocation=TRUE) {
     title <- paste0(title, " by Game Location")
   }
 
-  plot <- plot + labs(title=title)
+  colors <- c(Loss="#F8766D", Tie="#619CFF", Won="#00BA38")
+
+  plot <- plot + labs(title=title) + scale_fill_manual(values=colors)
 
   plot
 }

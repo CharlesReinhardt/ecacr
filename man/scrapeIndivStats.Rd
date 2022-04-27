@@ -27,6 +27,6 @@ data frame of individual player statistics for all ECAC teams
 Webscrape (using rvest) all individual player statistics for the current season
 }
 \examples{
-scrapeIndivStats()
+scrapeIndivStats(verbose=FALSE)
 scrapeIndivStats(games="conference", players="skaters", gender="men", verbose=FALSE)
 }

@@ -25,7 +25,7 @@ Trent Meyer: shiny app on frisbee, is coming along awesome!
 
 ## April 18
 
-Caleb Hamlen: shiny app on Golf data
+Caleb Hamblen: shiny app on Golf data
 
 ## April 20
 
@@ -34,4 +34,8 @@ Tom: R package!!! On covid data and some cool queries to graph. Fun to chat with
 ## April 25
 
 Emil: shiny app on empty net shots analysis, part of his SYE. Really cool and looks nice
+
+## April 27
+
+Kasey: shinyapp on olympic swimming data. making me real jealous of the shinyapps in this class
 

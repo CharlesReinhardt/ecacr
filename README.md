@@ -5,8 +5,12 @@
 
 ecacr is intended to allow R users to create introductory data
 visualizations of ECAC Hockey teams, games, and players. ecacr makes
-intensive use of tidyverse functionality, including dplyr, tidyr, and
-ggplot2. Keep reading to see how you can use ecacr.
+intensive use of the
+[tidyverse](https://www.tidyverse.org/ "Tidyverse Homepage"), including
+[dplyr](https://dplyr.tidyverse.org/ "Dplyr Homepage"),
+[stringr](https://stringr.tidyverse.org/ "Stringr Homepage"), and
+[ggplot2](https://ggplot2.tidyverse.org/ "ggplot2 Homepage"). Keep
+reading to see how you can use ecacr.
 
 #### Team Visualizations
 
@@ -44,11 +48,12 @@ ecacr also provides two data visualizations for individual player data
 
 #### Web Scraping
 
-ecacr makes use of rvest to produce a variety of web scraping functions.
-These are all used internally in the previous data visualization
-functions for those with no prior ggplot2 experience. Use these
-functions to scrape the data and then manually create your own
-visualizations.
+ecacr makes use of
+[rvest](https://rvest.tidyverse.org/ "Rvest Homepage") to produce a
+variety of web scraping functions. These are all used internally in the
+previous data visualization functions for those with no prior ggplot2
+experience. Use these functions to scrape the data and then manually
+create your own visualizations.
 
 -   `scrapeTeamStats()` for team level data
 

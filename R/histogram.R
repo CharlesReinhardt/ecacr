@@ -30,6 +30,6 @@ histogram <- function(var, games="all", players="goalies", gender="women", verbo
   }
 
   ggplot(data = data, aes_string(x = var)) +
-    geom_histogram() +
+    geom_histogram(bins=10, fill="red", alpha=0.5, color="black") +
     labs(x = var, y = "Number of Players", title = title)
 }

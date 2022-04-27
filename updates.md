@@ -86,10 +86,11 @@ got a github pages pkgdown site up and running! It is currently super empty (obv
 
 Made really good progress on a documentation thing for the package. Want to move to making graphs look prettier before my final submit.
 
-# TODO make boxplot, scatterplot, histogram prettier
-# TODO insert links for tidyverse, dplyr, ggplot2, and rvest
+## April 27 end of class
 
-# TODO how to publish package? or how to download unpublished package?4
+Added links to homepages of some package dependencies in my main readme doc. Fixed colors on winLossChart(). Made scatterplot interactive. Prettified histogram and boxplot a bit. 
+
+# TODO how to publish package? or how to download unpublished package?
 
 # TODO test histogram function
 # TODO test boxplot function

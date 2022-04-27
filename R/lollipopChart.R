@@ -12,7 +12,7 @@
 #' @import ggplot2
 #'
 #' @examples
-#' lollipopChart(var="Wins")
+#' lollipopChart(var="Goals")
 #' lollipopChart(var="PenaltyMinutes", games="conference", gender="men")
 lollipopChart <- function(var, games="all", gender="women") {
 

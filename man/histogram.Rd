@@ -4,7 +4,13 @@
 \alias{histogram}
 \title{Produce a ggplot2 Histogram}
 \usage{
-histogram(var, games = "all", players = "goalies", gender = "women")
+histogram(
+  var,
+  games = "all",
+  players = "goalies",
+  gender = "women",
+  verbose = TRUE
+)
 }
 \arguments{
 \item{var}{variable to plot}
@@ -23,6 +29,6 @@ Create a ggplot2 histogram object displaying the distribution of a given statist
 all ECAC players of a single gender (women or men)
 }
 \examples{
-histogram(var="Saves")
-histogram(var="Goals", games="conference", players="skaters", gender="men")
+histogram(var="Saves", verbose=FALSE)
+histogram(var="Goals", games="conference", players="skaters", gender="men", verbose=FALSE)
 }

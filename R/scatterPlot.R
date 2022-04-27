@@ -14,8 +14,8 @@
 #' @import ggplot2
 #'
 #' @examples
-#' scatterPlot(x="Goals", y="Wins")
-#' scatterPlot(x="Assists", y="PenaltyMinutes", games="conference", gender="men", trend=TRUE)
+#' scatterPlot(x="Assists", y="PenaltyMinutes")
+#' scatterPlot(x="Goals", y="Assists", games="conference", gender="men", trend=TRUE)
 scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE) {
 
   # check for invalid variable names
@@ -30,13 +30,15 @@ scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE) {
   data <- scrapeTeamStats(games=games, gender=gender)
   title <- paste0(x, " vs. ", y, " in ", stringr::str_to_title(gender) , "'s ECAC")
 
-  plot <- ggplot(data, aes(x = .data[[x]], y = .data[[y]])) +
+  plot <- ggplot(data, aes(x = .data[[x]], y = .data[[y]], label = Name)) +
     geom_point() +
     labs(title = title)
 
   if (trend) {
     plot <- plot + geom_smooth(se=FALSE)
   }
+
+  plot <- plotly::ggplotly(plot, tooltip="label")
 
   plot
 }

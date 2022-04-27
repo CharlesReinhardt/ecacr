@@ -25,6 +25,6 @@ Create a ggplot2 scatter plot object of summary team statistics. Can display a t
 if desired.
 }
 \examples{
-scatterPlot(x="Goals", y="Wins")
-scatterPLot(x="Assists", y="PenaltyMinutes", games="conference", gender="men", trend=TRUE)
+scatterPlot(x="Assists", y="PenaltyMinutes")
+scatterPlot(x="Goals", y="Assists", games="conference", gender="men", trend=TRUE)
 }

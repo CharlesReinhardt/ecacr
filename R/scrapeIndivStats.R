@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' scrapeIndivStats()
+#' scrapeIndivStats(verbose=FALSE)
 #' scrapeIndivStats(games="conference", players="skaters", gender="men", verbose=FALSE)
 scrapeIndivStats <- function(games="all", players="goalies", gender="women", verbose=TRUE) {
 

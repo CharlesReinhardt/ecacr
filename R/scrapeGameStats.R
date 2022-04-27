@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' scrapeGameStats()
+#' scrapeGameStats(verbose=FALSE)
 #' scrapeGameStats(gender="men", verbose=FALSE)
 scrapeGameStats <- function(gender="women", verbose=TRUE) {
   teamNames <- c("brown", "clarkson", "colgate", "cornell", "dartmouth", "harvard",

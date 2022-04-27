@@ -34,6 +34,6 @@ Creates a ggplot2 lollipop chart (bar chart alternative) object. Displays the ov
 a given player statistic. Also provides the player's team.
 }
 \examples{
-overallLeaders(var="Saves")
+overallLeaders(var="Saves", verbose=FALSE)
 overallLeaders(var="Assists", n_leaders=15, games="conference", players="skaters", gender="men", verbose=FALSE)
 }

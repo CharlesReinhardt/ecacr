@@ -4,7 +4,7 @@
 \alias{boxplot}
 \title{Produce a ggplot2 Boxplot}
 \usage{
-boxplot(var, gender = "women")
+boxplot(var, gender = "women", verbose = TRUE)
 }
 \arguments{
 \item{var}{variable to plot}
@@ -20,6 +20,6 @@ grouping the variable of choice by ECAC team, and displaying the value of variab
 for each ECAC game.
 }
 \examples{
-boxplot(var="Goals", gender="women")
-boxplot(var="Assists", gender="men")
+boxplot(var="Goals", gender="women", verbose=FALSE)
+boxplot(var="Assists", gender="men", verbose=FALSE)
 }

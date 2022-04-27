@@ -18,6 +18,6 @@ dataframe of game statistics
 Webscrape (using rvest) skater and goalie statistics for all ECAC games this season
 }
 \examples{
-scrapeGameStats()
+scrapeGameStats(verbose=FALSE)
 scrapeGameStats(gender="men", verbose=FALSE)
 }
