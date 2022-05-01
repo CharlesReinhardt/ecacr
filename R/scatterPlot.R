@@ -16,7 +16,7 @@
 #' @examples
 #' scatterPlot(x="Assists", y="PenaltyMinutes")
 #' scatterPlot(x="Goals", y="Assists", games="conference", gender="men", trend=TRUE)
-scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE) {
+scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE, dynamic=TRUE) {
 
   # check for invalid variable names
   if (!varIsValid(x, type="team")) {
@@ -38,7 +38,9 @@ scatterPlot <- function(x, y, games="all", gender="women", trend=FALSE) {
     plot <- plot + geom_smooth(se=FALSE)
   }
 
-  plot <- plotly::ggplotly(plot, tooltip="label")
+  if (dynamic) {
+    plot <- plotly::ggplotly(plot, tooltip="label")
+  }
 
   plot
 }

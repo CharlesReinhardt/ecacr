@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' scrapeGameStatsByTeam(team="brown")
-#' scrapeGameStatsByTeam(team="stlawrence", gender="men", verbose=FALSE)
+#' scrapeGameStatsByTeam(team="stlawrence", gender="men")
 scrapeGameStatsByTeam <- function(team, gender="women") {
 
   season <- "2021-22"

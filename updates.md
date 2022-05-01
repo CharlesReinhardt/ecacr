@@ -90,6 +90,12 @@ Made really good progress on a documentation thing for the package. Want to move
 
 Added links to homepages of some package dependencies in my main readme doc. Fixed colors on winLossChart(). Made scatterplot interactive. Prettified histogram and boxplot a bit. 
 
+## May April 32 beginning of class
+
+Fixed some dependency issues in the website documentation. Fixed main documentation page and I think that is it! Boom! Finished Product I think!!
+
+
+
 # TODO how to publish package? or how to download unpublished package?
 
 # TODO test histogram function

@@ -4,7 +4,14 @@
 \alias{scatterPlot}
 \title{Produce a ggplot2 Scatter Plot}
 \usage{
-scatterPlot(x, y, games = "all", gender = "women", trend = FALSE)
+scatterPlot(
+  x,
+  y,
+  games = "all",
+  gender = "women",
+  trend = FALSE,
+  dynamic = TRUE
+)
 }
 \arguments{
 \item{x}{x-axis variable}

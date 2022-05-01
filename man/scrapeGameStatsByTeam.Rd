@@ -19,5 +19,5 @@ Webscrape (using rvest) skater and goalie statistics for one team's games this s
 }
 \examples{
 scrapeGameStatsByTeam(team="brown")
-scrapeGameStatsByTeam(team="stlawrence", gender="men", verbose=FALSE)
+scrapeGameStatsByTeam(team="stlawrence", gender="men")
 }

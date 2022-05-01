@@ -15,5 +15,7 @@ Imports:
     forcats,
     dplyr,
     rvest,
-    ggplot2
+    ggplot2,
+    plotly,
+    lubridate
 URL: https://charlesreinhardt.github.io/ecacr/

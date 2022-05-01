@@ -27,12 +27,16 @@ lollipopChart <- function(var, games="all", gender="women") {
     dplyr::mutate(Name = forcats::fct_reorder(factor(Name), .data[[var]]))
 
   genderTitle <- stringr::str_to_title(gender)
+  title <- paste0(var, " by ", genderTitle, "'s teams in the ECAC")
+  if (games == "conference") {
+    title <- paste0(title, " (Conference only)")
+  }
 
   plot <-
     ggplot(data=data_ordered, mapping=aes(x = Name, y = .data[[var]])) +
     geom_segment(aes(xend=Name, y=0, yend=.data[[var]])) +
     geom_point(color="Red", size=2) +
-    labs(title = paste0(var, " by ", genderTitle , "'s teams in the ECAC")) +
+    labs(title = title) +
     coord_flip()
 
   plot

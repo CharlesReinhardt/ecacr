@@ -1,5 +1,5 @@
 
-# ecacr
+# ecacr <img src="man/figures/logo.png" align="right" />
 
 ## Overview
 
@@ -63,7 +63,52 @@ create your own visualizations.
 -   `scrapeIndivStats()` and `scrapeIndivStatsByTeam()` for player level
     data
 
+## Usage
+
+Here are some sample visualizations you can create with ecacr. For more
+examples, click on the documentation for each individual function.
+
+``` r
+# Team Visualizations
+lollipopChart(var="Assists")
+```
+
+![](man/figures/team_visualizations-1.png)<!-- -->
+
+``` r
+scatterPlot(x="Shots", y="Goals", trend=TRUE, dynamic=FALSE)
+```
+
+![](man/figures/team_visualizations-2.png)<!-- -->
+
+``` r
+# Game Visualizations
+winLossChart(team="stlawrence", gender="men", byLocation=TRUE)
+```
+
+![](man/figures/game_visualizations-1.png)<!-- -->
+
+``` r
+boxplot(var="PenaltyMinutes", verbose=FALSE)
+```
+
+![](man/figures/game_visualizations-2.png)<!-- -->
+
+``` r
+# Individual Visualizations
+overallLeaders(var="Goals", games="conference", players="skaters", verbose=FALSE)
+```
+
+![](man/figures/indiv_visualizations-1.png)<!-- -->
+
+``` r
+histogram(var="Shots", players="skaters", verbose=FALSE)
+```
+
+![](man/figures/indiv_visualizations-2.png)<!-- -->
+
 ## Installation
 
-Right now, I have no idea how one would go about installing this package
-for their own use. Stay tuned!
+Right now, this package is not submitted to CRAN, and thus cannot be
+easily installed. Stay tuned for an updated package ready to be
+released.
