@@ -17,5 +17,6 @@ Imports:
     rvest,
     ggplot2,
     plotly,
-    lubridate
+    lubridate,
+    stringr
 URL: https://charlesreinhardt.github.io/ecacr/

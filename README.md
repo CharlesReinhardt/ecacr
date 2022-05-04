@@ -1,5 +1,5 @@
 
-# ecacr <img src="man/figures/logo.png" align="right" />
+# ecacr <img src="man/figures/logo.png" align="right" width="120" />
 
 ## Overview
 
@@ -11,6 +11,15 @@ intensive use of the
 [stringr](https://stringr.tidyverse.org/ "Stringr Homepage"), and
 [ggplot2](https://ggplot2.tidyverse.org/ "ggplot2 Homepage"). Keep
 reading to see how you can use ecacr.
+
+## Installation
+
+This package can be used “as is” through the
+`devtools::install_github()` command.
+
+``` r
+devtools::install_github("CharlesReinhardt/ecacr")
+```
 
 #### Team Visualizations
 
@@ -106,9 +115,3 @@ histogram(var="Shots", players="skaters", verbose=FALSE)
 ```
 
 ![](man/figures/indiv_visualizations-2.png)<!-- -->
-
-## Installation
-
-Right now, this package is not submitted to CRAN, and thus cannot be
-easily installed. Stay tuned for an updated package ready to be
-released.
