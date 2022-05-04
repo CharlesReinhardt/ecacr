@@ -66,6 +66,13 @@
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p>ecacr is intended to allow R users to create introductory data visualizations of ECAC Hockey teams, games, and players. ecacr makes intensive use of the <a href="https://www.tidyverse.org/" title="Tidyverse Homepage" class="external-link">tidyverse</a>, including <a href="https://dplyr.tidyverse.org/" title="Dplyr Homepage" class="external-link">dplyr</a>, <a href="https://stringr.tidyverse.org/" title="Stringr Homepage" class="external-link">stringr</a>, and <a href="https://ggplot2.tidyverse.org/" title="ggplot2 Homepage" class="external-link">ggplot2</a>. Keep reading to see how you can use ecacr.</p>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>This package can be used “as is” through the <code>devtools::install_github()</code> command.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"CharlesReinhardt/ecacr"</span><span class="op">)</span></code></pre></div>
 <div class="section level4">
 <h4 id="team-visualizations">Team Visualizations<a class="anchor" aria-label="anchor" href="#team-visualizations"></a>
 </h4>
@@ -108,32 +115,27 @@
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>Here are some sample visualizations you can create with ecacr. For more examples, click on the documentation for each individual function.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Team Visualizations</span>
 <span class="fu"><a href="reference/lollipopChart.html">lollipopChart</a></span><span class="op">(</span>var<span class="op">=</span><span class="st">"Assists"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/team_visualizations-1.png"><!-- --></p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/scatterPlot.html">scatterPlot</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Shots"</span>, y<span class="op">=</span><span class="st">"Goals"</span>, trend<span class="op">=</span><span class="cn">TRUE</span>, dynamic<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/team_visualizations-2.png"><!-- --></p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Game Visualizations</span>
 <span class="fu"><a href="reference/winLossChart.html">winLossChart</a></span><span class="op">(</span>team<span class="op">=</span><span class="st">"stlawrence"</span>, gender<span class="op">=</span><span class="st">"men"</span>, byLocation<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/game_visualizations-1.png"><!-- --></p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/boxplot.html">boxplot</a></span><span class="op">(</span>var<span class="op">=</span><span class="st">"PenaltyMinutes"</span>, verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/game_visualizations-2.png"><!-- --></p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Individual Visualizations</span>
 <span class="fu"><a href="reference/overallLeaders.html">overallLeaders</a></span><span class="op">(</span>var<span class="op">=</span><span class="st">"Goals"</span>, games<span class="op">=</span><span class="st">"conference"</span>, players<span class="op">=</span><span class="st">"skaters"</span>, verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/indiv_visualizations-1.png"><!-- --></p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/histogram.html">histogram</a></span><span class="op">(</span>var<span class="op">=</span><span class="st">"Shots"</span>, players<span class="op">=</span><span class="st">"skaters"</span>, verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/indiv_visualizations-2.png"><!-- --></p>
-</div>
-<div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
-</h2>
-<p>Right now, this package is not submitted to CRAN, and thus cannot be easily installed. Stay tuned for an updated package ready to be released.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
