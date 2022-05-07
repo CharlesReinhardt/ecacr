@@ -94,12 +94,3 @@ Added links to homepages of some package dependencies in my main readme doc. Fix
 
 Fixed some dependency issues in the website documentation. Fixed main documentation page and I think that is it! Boom! Finished Product I think!!
 
-
-
-# TODO how to publish package? or how to download unpublished package?
-
-# TODO test histogram function
-# TODO test boxplot function
-# TODO test overallLeaders Function
-
-
